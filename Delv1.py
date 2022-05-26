@@ -52,3 +52,11 @@ print(strippedAnalysisDesc)
 analysisDescValue = parseClinicPage.find("tr", id="EXPAND-analysisPop-baseline").find("div")
 strippedAnalysisDescValue = analysisDescValue.text.strip()
 print(strippedAnalysisDescValue)
+
+#Age category
+ageCategory = parseClinicPage.find_all("th", class_="de-baselineLabelCell")[2]
+strippedAgeCategory = ageCategory.text
+print(strippedAgeCategory)
+
+ageParameters = parseClinicPage.find("div", class_="labelSubtle")
+print(ageParameters)
