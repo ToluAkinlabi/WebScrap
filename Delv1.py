@@ -43,3 +43,12 @@ overallPartValue = parseClinicPage.find("td", class_="de-numValue_baselineDataCe
 strippedOverallPartValue = overallPartValue.text.strip()
 print(strippedOverallPartValue)
 
+#Analysis Description
+analysisDesc = parseClinicPage.find("tr", id="EXPAND-analysisPop-baseline").find("span")
+strippedAnalysisDesc = analysisDesc.text.strip()
+print(strippedAnalysisDesc)
+
+#Analysis Description value
+analysisDescValue = parseClinicPage.find("tr", id="EXPAND-analysisPop-baseline").find("div")
+strippedAnalysisDescValue = analysisDescValue.text.strip()
+print(strippedAnalysisDescValue)
