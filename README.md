@@ -1,2 +1,2 @@
 # WebScrap
-A webscraping research using python and beautiful soup
+A webscraping research project using python and beautiful soup
