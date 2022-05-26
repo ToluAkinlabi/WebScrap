@@ -11,3 +11,12 @@ parseClinicPage = BeautifulSoup(clinicPage.content, "html.parser")
 baselineHeading = parseClinicPage.find_all('span', class_="ct-header2")[1]
 strippedBaselineHeading = baselineHeading.text.strip()
 print(strippedBaselineHeading)
+
+#Table data content
+tableRowTitle = parseClinicPage.find_all("td", class_="de-baselineLabelCell")[0]
+strippedTableRowTitle = tableRowTitle.text.strip()
+print(strippedTableRowTitle)
+
+tableRowTitleContent = parseClinicPage.find("th", class_="de-baselineLabelCell")
+strippedTableRowTitleContent = tableRowTitleContent.text.strip()
+print(strippedTableRowTitleContent)
