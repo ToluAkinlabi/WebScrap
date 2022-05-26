@@ -11,4 +11,3 @@ parseClinicPage = BeautifulSoup(clinicPage.content, "html.parser")
 baselineHeading = parseClinicPage.find_all('span', class_="ct-header2")[1]
 strippedBaselineHeading = baselineHeading.text.strip()
 print(strippedBaselineHeading)
-
