@@ -13,6 +13,7 @@ strippedBaselineHeading = baselineHeading.text.strip()
 print(strippedBaselineHeading)
 
 #Table data content
+
 #Title
 tableRowTitle = parseClinicPage.find_all("td", class_="de-baselineLabelCell")[0]
 strippedTableRowTitle = tableRowTitle.text.strip()
@@ -70,9 +71,9 @@ emptyColOne = parseClinicPage.find("th", class_="de-baselineLabelCell", style="b
 strippedEmptyColOne = emptyColOne.text
 print(strippedEmptyColOne)
 
-emptyRowOne = parseClinicPage.find("td", class_="de-baselineLabelCell", rowspan="4")
-strippedEmptyRowOne = emptyRowOne.text
-print(strippedEmptyRowOne)
+emptyColTwo = parseClinicPage.find("td", class_="de-baselineLabelCell", rowspan="4")
+strippedEmptyColTwo = emptyColTwo.text
+#print(strippedEmptyColTwo)
 
 emptyRowOneDeets = parseClinicPage.find("td", class_="de-baselineLabelCell", rowspan="4").find_next()
 strippedEmptyRowOneDeets = emptyRowOneDeets.text
@@ -90,6 +91,33 @@ emptyRowTwoSecondDeets = parseClinicPage.find_all("div", string="2")[0]
 strippedEmptyRowTwoSecondDeets = emptyRowTwoSecondDeets.text
 print(strippedEmptyRowTwoSecondDeets)
 
-emptyRowTwoSecondThirdDeets = parseClinicPage.find_all("div", string="2")[0].find_next()
-strippedEmptyRowTwoSecondThirdDeets = emptyRowTwoSecondThirdDeets.text
-print(strippedEmptyRowTwoSecondThirdDeets)
+emptyRowTwoThirdDeets = parseClinicPage.find_all("div", string="2")[0].find_next()
+strippedEmptyRowTwoThirdDeets = emptyRowTwoThirdDeets.text
+print(strippedEmptyRowTwoThirdDeets)
+
+emptyRowThreeDeets = parseClinicPage.find("td", class_="de-numValue_baselineDataCell").find_all_next("td", class_="de-baselineLabelCell")[5]
+strippedEmptyRowThreeDeets = emptyRowThreeDeets.text
+print(strippedEmptyRowThreeDeets)
+
+emptyRowThreeSecondDeets = parseClinicPage.find_all("div", string="0")[0]
+strippedEmptyRowThreeSecondDeets = emptyRowThreeSecondDeets.text
+print(strippedEmptyRowThreeSecondDeets)
+
+emptyRowThreeThirdDeets = parseClinicPage.find_all("div", string="0")[0].find_next()
+strippedEmptyRowThreeThirdDeets = emptyRowThreeThirdDeets.text
+print(strippedEmptyRowThreeThirdDeets)
+
+emptyRowFourDeets = parseClinicPage.find("td", class_="de-numValue_baselineDataCell").find_all_next("td", class_="de-baselineLabelCell")[6]
+strippedEmptyRowFourDeets = emptyRowFourDeets.text
+print(strippedEmptyRowFourDeets)
+
+emptyRowFourSecondDeets = parseClinicPage.find_all("div", string="0")[0]
+strippedEmptyRowFourSecondDeets = emptyRowFourSecondDeets.text
+print(strippedEmptyRowFourSecondDeets)
+
+emptyRowFourThirdDeets = parseClinicPage.find_all("div", string="0")[0].find_next()
+strippedEmptyRowFourThirdDeets = emptyRowFourThirdDeets.text
+print(strippedEmptyRowFourThirdDeets)
+
+
+#Sex Category
