@@ -54,9 +54,27 @@ strippedAnalysisDescValue = analysisDescValue.text.strip()
 print(strippedAnalysisDescValue)
 
 #Age category
-ageCategory = parseClinicPage.find_all("th", class_="de-baselineLabelCell")[2]
+ageCategory = parseClinicPage.find_all("th", class_="de-baselineLabelCell")[2].find_all("div", class_="labelSubtle")[0].find_previous()
 strippedAgeCategory = ageCategory.text
 print(strippedAgeCategory)
 
-ageParameters = parseClinicPage.find("div", class_="labelSubtle")
-print(ageParameters)
+ageParameters = parseClinicPage.find_all("th", class_="de-baselineLabelCell")[2].find_all("div", class_="labelSubtle")[0]
+strippedAgeParameter = ageParameters.text
+print(strippedAgeParameter)
+
+unitParameters = parseClinicPage.find_all("th", class_="de-baselineLabelCell")[2].find_all("div", class_="labelSubtle")[1]
+strippedUnitParameter = unitParameters.text
+print(strippedUnitParameter)
+
+emptyColOne = parseClinicPage.find("th", class_="de-baselineLabelCell", style="border-top-color:black")
+strippedEmptyColOne = emptyColOne.text
+print(strippedEmptyColOne)
+
+emptyRowOne = parseClinicPage.find("td", class_="de-baselineLabelCell", rowspan="4")
+strippedEmptyRowOne = emptyRowOne.text
+print(strippedEmptyRowOne)
+
+emptyRowOneDeets = parseClinicPage.find("td", class_="de-baselineLabelCell", rowspan="4").find_next()
+strippedEmptyRowOneDeets = emptyRowOneDeets.text
+print(strippedEmptyRowOneDeets)
+
