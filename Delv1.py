@@ -78,3 +78,14 @@ emptyRowOneDeets = parseClinicPage.find("td", class_="de-baselineLabelCell", row
 strippedEmptyRowOneDeets = emptyRowOneDeets.text
 print(strippedEmptyRowOneDeets)
 
+emptyRowOneSecondDeets = parseClinicPage.find("td", class_="de-baselineLabelCell", rowspan="4").find_next().find_next()
+strippedEmptyRowOneSecondDeets = emptyRowOneSecondDeets.text
+print(strippedEmptyRowOneSecondDeets)
+
+emptyRowTwoDeets = parseClinicPage.find("td", class_="de-numValue_baselineDataCell").find_all_next("td", class_="de-baselineLabelCell")[4]
+strippedEmptyRowTwoDeets = emptyRowTwoDeets.text
+print(strippedEmptyRowTwoDeets)
+
+emptyRowTwoSecondDeets = parseClinicPage.find("div", class_="de-numValue_baselineDataCell")
+#strippedEmptyRowTwoSecondDeets = emptyRowTwoSecondDeets.text
+print(emptyRowTwoSecondDeets)
