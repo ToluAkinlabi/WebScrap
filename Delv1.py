@@ -63,61 +63,65 @@ ageParameters = parseClinicPage.find_all("th", class_="de-baselineLabelCell")[2]
 strippedAgeParameter = ageParameters.text
 print(strippedAgeParameter)
 
-unitParameters = parseClinicPage.find_all("th", class_="de-baselineLabelCell")[2].find_all("div", class_="labelSubtle")[1]
-strippedUnitParameter = unitParameters.text
-print(strippedUnitParameter)
+ageUnitParameters = parseClinicPage.find_all("th", class_="de-baselineLabelCell")[2].find_all("div", class_="labelSubtle")[1]
+strippedAgeUnitParameter = ageUnitParameters.text
+print(strippedAgeUnitParameter)
 
-emptyColOne = parseClinicPage.find("th", class_="de-baselineLabelCell", style="border-top-color:black")
-strippedEmptyColOne = emptyColOne.text
-print(strippedEmptyColOne)
+emptyAgeOne = parseClinicPage.find("th", class_="de-baselineLabelCell", style="border-top-color:black")
+strippedEmptyAgeOne = emptyAgeOne.text
+print(strippedEmptyAgeOne)
 
-emptyColTwo = parseClinicPage.find("td", class_="de-baselineLabelCell", rowspan="4")
-strippedEmptyColTwo = emptyColTwo.text
-print(strippedEmptyColTwo)
+emptyAgeTwo = parseClinicPage.find("th", class_="de-baselineLabelCell", style="border-top-color:black").find_next()
+strippedEmptyAgeTwo = emptyAgeTwo.text
+print(strippedEmptyAgeTwo)
 
-emptyRowOneDeets = parseClinicPage.find("td", class_="de-baselineLabelCell", rowspan="4").find_next()
-strippedEmptyRowOneDeets = emptyRowOneDeets.text
-print(strippedEmptyRowOneDeets)
+emptyAgeCol = parseClinicPage.find_all("td", class_="de-baselineLabelCell", rowspan="4")[0]
+strippedEmptyAgeCol = emptyAgeCol.text
+print(strippedEmptyAgeCol)
 
-emptyRowOneSecondDeets = parseClinicPage.find("td", class_="de-baselineLabelCell", rowspan="4").find_next().find_next()
-strippedEmptyRowOneSecondDeets = emptyRowOneSecondDeets.text
-print(strippedEmptyRowOneSecondDeets)
+ageRowOneWithValueOne = parseClinicPage.find_all("td", class_="de-baselineLabelCell", rowspan="4")[0].find_next()
+strippedAgeRowOneWithValueOne = ageRowOneWithValueOne.text
+print(strippedAgeRowOneWithValueOne)
 
-emptyRowTwoDeets = parseClinicPage.find("td", class_="de-numValue_baselineDataCell").find_all_next("td", class_="de-baselineLabelCell")[4]
-strippedEmptyRowTwoDeets = emptyRowTwoDeets.text
-print(strippedEmptyRowTwoDeets)
+ageRowOneWithValueTwo = parseClinicPage.find("td", class_="de-baselineLabelCell", rowspan="4").find_next().find_next()
+strippedAgeRowOneWithValueTwo = ageRowOneWithValueTwo.text
+print(strippedAgeRowOneWithValueTwo)
 
-emptyRowTwoSecondDeets = parseClinicPage.find_all("div", string="2")[0]
-strippedEmptyRowTwoSecondDeets = emptyRowTwoSecondDeets.text
-print(strippedEmptyRowTwoSecondDeets)
+ageRowTwoWithValueOne = parseClinicPage.find("td", class_="de-numValue_baselineDataCell").find_all_next("td", class_="de-baselineLabelCell")[4]
+strippedAgeRowTwoWithValueOne = ageRowTwoWithValueOne.text
+print(strippedAgeRowTwoWithValueOne)
 
-emptyRowTwoThirdDeets = parseClinicPage.find_all("div", string="2")[0].find_next()
-strippedEmptyRowTwoThirdDeets = emptyRowTwoThirdDeets.text
-print(strippedEmptyRowTwoThirdDeets)
+ageRowTwoWithValueTwo = parseClinicPage.find_all("div", string="2")[0]
+strippedAgeRowTwoWithValueTwo = ageRowTwoWithValueTwo.text
+print(strippedAgeRowTwoWithValueTwo)
 
-emptyRowThreeDeets = parseClinicPage.find("td", class_="de-numValue_baselineDataCell").find_all_next("td", class_="de-baselineLabelCell")[5]
-strippedEmptyRowThreeDeets = emptyRowThreeDeets.text
-print(strippedEmptyRowThreeDeets)
+ageRowTwoWithValueThree = parseClinicPage.find_all("div", string="2")[0].find_next()
+strippedAgeRowTwoWithValueThree = ageRowTwoWithValueThree.text
+print(strippedAgeRowTwoWithValueThree)
 
-emptyRowThreeSecondDeets = parseClinicPage.find_all("div", string="0")[0]
-strippedEmptyRowThreeSecondDeets = emptyRowThreeSecondDeets.text
-print(strippedEmptyRowThreeSecondDeets)
+ageRowThreeWithValueOne = parseClinicPage.find("td", class_="de-numValue_baselineDataCell").find_all_next("td", class_="de-baselineLabelCell")[5]
+strippedAgeRowThreeWithValueOne = ageRowThreeWithValueOne.text
+print(strippedAgeRowThreeWithValueOne)
 
-emptyRowThreeThirdDeets = parseClinicPage.find_all("div", string="0")[0].find_next()
-strippedEmptyRowThreeThirdDeets = emptyRowThreeThirdDeets.text
-print(strippedEmptyRowThreeThirdDeets)
+ageRowThreeWithValueTwo = parseClinicPage.find_all("div", string="0")[0]
+strippedAgeRowThreeWithValueTwo = ageRowThreeWithValueTwo.text
+print(strippedAgeRowThreeWithValueTwo)
 
-emptyRowFourDeets = parseClinicPage.find("td", class_="de-numValue_baselineDataCell").find_all_next("td", class_="de-baselineLabelCell")[6]
-strippedEmptyRowFourDeets = emptyRowFourDeets.text
-print(strippedEmptyRowFourDeets)
+ageRowThreeWithValueThree = parseClinicPage.find_all("div", string="0")[0].find_next()
+strippedAgeRowThreeWithValueThree = ageRowThreeWithValueThree.text
+print(strippedAgeRowThreeWithValueThree)
 
-emptyRowFourSecondDeets = parseClinicPage.find_all("div", string="0")[0]
-strippedEmptyRowFourSecondDeets = emptyRowFourSecondDeets.text
-print(strippedEmptyRowFourSecondDeets)
+ageRowFourWithValueOne = parseClinicPage.find("td", class_="de-numValue_baselineDataCell").find_all_next("td", class_="de-baselineLabelCell")[6]
+strippedAgeRowFourWithValueOne = ageRowFourWithValueOne.text
+print(strippedAgeRowFourWithValueOne)
 
-emptyRowFourThirdDeets = parseClinicPage.find_all("div", string="0")[0].find_next()
-strippedEmptyRowFourThirdDeets = emptyRowFourThirdDeets.text
-print(strippedEmptyRowFourThirdDeets)
+ageRowFourWithValueTwo = parseClinicPage.find_all("div", string="0")[1]
+strippedAgeRowFourWithValueTwo = ageRowFourWithValueTwo.text
+print(strippedAgeRowFourWithValueTwo)
+
+ageRowFourWithValueThree = parseClinicPage.find_all("div", string="0")[1].find_next()
+strippedAgeRowFourWithValueThree = ageRowFourWithValueThree.text
+print(strippedAgeRowFourWithValueThree)
 
 
 #Sex Category
@@ -132,3 +136,92 @@ print(strippedsexParameters)
 sexUnitParameters = parseClinicPage.find_all("th", class_="de-baselineLabelCell")[4].find_all("div", class_="labelSubtle")[1]
 strippedsexUnitParameter = sexUnitParameters.text
 print(strippedsexUnitParameter)
+
+emptySexOne = parseClinicPage.find_all("th", class_="de-baselineLabelCell", style="border-top-color:black")[1]
+strippedEmptySexOne = emptySexOne.text
+print(strippedEmptySexOne)
+
+emptySexTwo = parseClinicPage.find_all("th", class_="de-baselineLabelCell", style="border-top-color:black")[1].find_next()
+strippedEmptySexTwo = emptySexTwo.text
+print(strippedEmptySexTwo)
+
+emptySexCol = parseClinicPage.find("td", class_="de-baselineLabelCell", rowspan="3")
+strippedEmptySexCol = emptySexCol.text
+print(strippedEmptySexCol)
+
+sexRowOneWithValueOne = parseClinicPage.find("td", class_="de-baselineLabelCell", rowspan="3").find_next()
+strippedSexRowOneWithValueOne = sexRowOneWithValueOne.text
+print(strippedSexRowOneWithValueOne)
+
+sexRowOneWithValueTwo = parseClinicPage.find("td", class_="de-baselineLabelCell", rowspan="3").find_next().find_next()
+strippedSexRowOneWithValueTwo = sexRowOneWithValueTwo.text
+print(strippedSexRowOneWithValueTwo)
+
+sexRowTwoWithValueOne = parseClinicPage.find("td", class_="de-numValue_baselineDataCell").find_all_next("td", class_="de-baselineLabelCell")[9]
+strippedSexRowTwoWithValueOne = sexRowTwoWithValueOne.text
+print(strippedSexRowTwoWithValueOne)
+
+sexRowTwoWithValueTwo = parseClinicPage.find_all("div", string="2")[1]
+strippedSexRowTwoWithValueTwo = sexRowTwoWithValueTwo.text
+print(strippedSexRowTwoWithValueTwo)
+
+sexRowTwoWithValueThree = parseClinicPage.find_all("div", string="2")[1].find_next()
+strippedSexRowTwoWithValueThree = sexRowTwoWithValueThree.text
+print(strippedSexRowTwoWithValueThree)
+
+sexRowThreeWithValueOne = parseClinicPage.find("td", class_="de-numValue_baselineDataCell").find_all_next("td", class_="de-baselineLabelCell")[10]
+strippedSexRowThreeWithValueOne = sexRowThreeWithValueOne.text
+print(strippedSexRowThreeWithValueOne)
+
+sexRowThreeWithValueTwo = parseClinicPage.find_all("div", string="0")[2]
+strippedSexRowThreeWithValueTwo = sexRowThreeWithValueTwo.text
+print(strippedSexRowThreeWithValueTwo)
+
+sexRowThreeWithValueThree = parseClinicPage.find_all("div", string="0")[2].find_next()
+strippedSexRowThreeWithValueThree = sexRowThreeWithValueThree.text
+print(strippedSexRowThreeWithValueThree)
+
+#Race Category
+raceCategory = parseClinicPage.find_all("th", class_="de-baselineLabelCell")[6]
+strippedRaceCategory = raceCategory.text
+print(strippedRaceCategory)
+
+raceParameters = parseClinicPage.find_all("th", class_="de-baselineLabelCell")[6].find_all("div", class_="labelSubtle")[0]
+strippedRaceParameters = raceParameters.text
+print(strippedRaceParameters)
+
+raceUnitParameters = parseClinicPage.find_all("th", class_="de-baselineLabelCell")[6].find_all("div", class_="labelSubtle")[1]
+strippedRaceUnitParameter = raceUnitParameters.text
+print(strippedRaceUnitParameter)
+
+emptyRaceOne = parseClinicPage.find_all("th", class_="de-baselineLabelCell", style="border-top-color:black")[1]
+strippedEmptyRaceOne = emptyRaceOne.text
+print(strippedEmptyRaceOne)
+
+emptyRaceTwo = parseClinicPage.find_all("th", class_="de-baselineLabelCell", style="border-top-color:black")[1].find_next()
+strippedEmptyRaceTwo = emptyRaceTwo.text
+print(strippedEmptyRaceTwo)
+
+emptyRaceCol = parseClinicPage.find("td", class_="de-baselineLabelCell", rowspan="8")
+strippedEmptyRaceCol = emptyRaceCol.text
+print(strippedEmptyRaceCol)
+
+raceRowOneWithValueOne = parseClinicPage.find("td", class_="de-baselineLabelCell", rowspan="8").find_next()
+strippedRaceRowOneWithValueOne = raceRowOneWithValueOne.text
+print(strippedRaceRowOneWithValueOne)
+
+raceRowOneWithValueTwo = parseClinicPage.find("td", class_="de-baselineLabelCell", rowspan="8").find_next().find_next()
+strippedRaceRowOneWithValueTwo = raceRowOneWithValueTwo.text
+print(strippedRaceRowOneWithValueTwo)
+
+sexRowThreeWithValueOne = parseClinicPage.find("td", class_="de-numValue_baselineDataCell").find_all_next("td", class_="de-baselineLabelCell")[10]
+strippedSexRowThreeWithValueOne = sexRowThreeWithValueOne.text
+print(strippedSexRowThreeWithValueOne)
+
+sexRowThreeWithValueTwo = parseClinicPage.find_all("div", string="0")[2]
+strippedSexRowThreeWithValueTwo = sexRowThreeWithValueTwo.text
+print(strippedSexRowThreeWithValueTwo)
+
+sexRowThreeWithValueThree = parseClinicPage.find_all("div", string="0")[2].find_next()
+strippedSexRowThreeWithValueThree = sexRowThreeWithValueThree.text
+print(strippedSexRowThreeWithValueThree)
