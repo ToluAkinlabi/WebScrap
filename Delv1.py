@@ -238,4 +238,27 @@ raceRowThreeWithValueThree = parseClinicPage.find_all("div", string="0")[4].find
 strippedRaceRowThreeWithValueThree = raceRowThreeWithValueThree.text
 print(strippedRaceRowThreeWithValueThree)
 
+raceRowFourWithValueOne = parseClinicPage.find("td", class_="de-numValue_baselineDataCell").find_all_next("td", class_="de-baselineLabelCell")[15]
+strippedRaceRowFourWithValueOne = raceRowFourWithValueOne.text
+print(strippedRaceRowFourWithValueOne)
+
+raceRowFourWithValueTwo = parseClinicPage.find_all("div", string="0")[5]
+strippedRaceRowFourWithValueTwo = raceRowFourWithValueTwo.text
+print(strippedRaceRowFourWithValueTwo)
+
+raceRowFourWithValueThree = parseClinicPage.find_all("div", string="0")[5].find_next()
+strippedRaceRowFourWithValueThree = raceRowFourWithValueThree.text
+print(strippedRaceRowFourWithValueThree)
+
+raceRowFiveWithValueOne = parseClinicPage.find("td", class_="de-numValue_baselineDataCell").find_all_next("td", class_="de-baselineLabelCell")[16]
+strippedRaceRowFiveWithValueOne = raceRowFiveWithValueOne.text
+print(strippedRaceRowFiveWithValueOne)
+
+raceRowFiveWithValueTwo = parseClinicPage.find_all("div", string="0")[6]
+strippedRaceRowFiveWithValueTwo = raceRowFiveWithValueTwo.text
+print(strippedRaceRowFiveWithValueTwo)
+
+raceRowFiveWithValueThree = parseClinicPage.find_all("div", string="0")[6].find_next()
+strippedRaceRowFiveWithValueThree = raceRowFiveWithValueThree.text
+print(strippedRaceRowFiveWithValueThree)
 
