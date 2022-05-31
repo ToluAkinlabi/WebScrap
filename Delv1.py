@@ -214,14 +214,28 @@ raceRowOneWithValueTwo = parseClinicPage.find("td", class_="de-baselineLabelCell
 strippedRaceRowOneWithValueTwo = raceRowOneWithValueTwo.text
 print(strippedRaceRowOneWithValueTwo)
 
-sexRowThreeWithValueOne = parseClinicPage.find("td", class_="de-numValue_baselineDataCell").find_all_next("td", class_="de-baselineLabelCell")[10]
-strippedSexRowThreeWithValueOne = sexRowThreeWithValueOne.text
-print(strippedSexRowThreeWithValueOne)
+raceRowTwoWithValueOne = parseClinicPage.find("td", class_="de-numValue_baselineDataCell").find_all_next("td", class_="de-baselineLabelCell")[13]
+strippedRaceRowTwoWithValueOne = raceRowTwoWithValueOne.text
+print(strippedRaceRowTwoWithValueOne)
 
-sexRowThreeWithValueTwo = parseClinicPage.find_all("div", string="0")[2]
-strippedSexRowThreeWithValueTwo = sexRowThreeWithValueTwo.text
-print(strippedSexRowThreeWithValueTwo)
+raceRowTwoWithValueTwo = parseClinicPage.find_all("div", string="0")[3]
+strippedRaceRowTwoWithValueTwo = raceRowTwoWithValueTwo.text
+print(strippedRaceRowTwoWithValueTwo)
 
-sexRowThreeWithValueThree = parseClinicPage.find_all("div", string="0")[2].find_next()
-strippedSexRowThreeWithValueThree = sexRowThreeWithValueThree.text
-print(strippedSexRowThreeWithValueThree)
+raceRowTwoWithValueThree = parseClinicPage.find_all("div", string="0")[3].find_next()
+strippedRaceRowTwoWithValueThree = raceRowTwoWithValueThree.text
+print(strippedRaceRowTwoWithValueThree)
+
+raceRowThreeWithValueOne = parseClinicPage.find("td", class_="de-numValue_baselineDataCell").find_all_next("td", class_="de-baselineLabelCell")[14]
+strippedRaceRowThreeWithValueOne = raceRowThreeWithValueOne.text
+print(strippedRaceRowThreeWithValueOne)
+
+raceRowThreeWithValueTwo = parseClinicPage.find_all("div", string="0")[4]
+strippedRaceRowThreeWithValueTwo = raceRowThreeWithValueTwo.text
+print(strippedRaceRowThreeWithValueTwo)
+
+raceRowThreeWithValueThree = parseClinicPage.find_all("div", string="0")[4].find_next()
+strippedRaceRowThreeWithValueThree = raceRowThreeWithValueThree.text
+print(strippedRaceRowThreeWithValueThree)
+
+
