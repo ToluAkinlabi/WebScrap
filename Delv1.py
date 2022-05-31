@@ -73,7 +73,7 @@ print(strippedEmptyColOne)
 
 emptyColTwo = parseClinicPage.find("td", class_="de-baselineLabelCell", rowspan="4")
 strippedEmptyColTwo = emptyColTwo.text
-#print(strippedEmptyColTwo)
+print(strippedEmptyColTwo)
 
 emptyRowOneDeets = parseClinicPage.find("td", class_="de-baselineLabelCell", rowspan="4").find_next()
 strippedEmptyRowOneDeets = emptyRowOneDeets.text
@@ -121,3 +121,14 @@ print(strippedEmptyRowFourThirdDeets)
 
 
 #Sex Category
+sexCategory = parseClinicPage.find_all("th", class_="de-baselineLabelCell")[4]
+strippedSexCategory = sexCategory.text
+print(strippedSexCategory)
+
+sexParameters = parseClinicPage.find_all("th", class_="de-baselineLabelCell")[4].find_all("div", class_="labelSubtle")[0]
+strippedsexParameters = sexParameters.text
+print(strippedsexParameters)
+
+sexUnitParameters = parseClinicPage.find_all("th", class_="de-baselineLabelCell")[4].find_all("div", class_="labelSubtle")[1]
+strippedsexUnitParameter = sexUnitParameters.text
+print(strippedsexUnitParameter)
