@@ -194,11 +194,11 @@ raceUnitParameters = parseClinicPage.find_all("th", class_="de-baselineLabelCell
 strippedRaceUnitParameter = raceUnitParameters.text
 print(strippedRaceUnitParameter)
 
-emptyRaceOne = parseClinicPage.find_all("th", class_="de-baselineLabelCell", style="border-top-color:black")[1]
+emptyRaceOne = parseClinicPage.find_all("th", class_="de-baselineLabelCell", style="border-top-color:black")[2]
 strippedEmptyRaceOne = emptyRaceOne.text
 print(strippedEmptyRaceOne)
 
-emptyRaceTwo = parseClinicPage.find_all("th", class_="de-baselineLabelCell", style="border-top-color:black")[1].find_next()
+emptyRaceTwo = parseClinicPage.find_all("th", class_="de-baselineLabelCell", style="border-top-color:black")[2].find_next()
 strippedEmptyRaceTwo = emptyRaceTwo.text
 print(strippedEmptyRaceTwo)
 
@@ -262,3 +262,80 @@ raceRowFiveWithValueThree = parseClinicPage.find_all("div", string="0")[6].find_
 strippedRaceRowFiveWithValueThree = raceRowFiveWithValueThree.text
 print(strippedRaceRowFiveWithValueThree)
 
+raceRowSixWithValueOne = parseClinicPage.find("td", class_="de-numValue_baselineDataCell").find_all_next("td", class_="de-baselineLabelCell")[17]
+strippedRaceRowSixWithValueOne = raceRowSixWithValueOne.text
+print(strippedRaceRowSixWithValueOne)
+
+raceRowSixWithValueTwo = parseClinicPage.find_all("div", string="2")[2]
+strippedRaceRowSixWithValueTwo = raceRowSixWithValueTwo.text
+print(strippedRaceRowSixWithValueTwo)
+
+raceRowSixWithValueThree = parseClinicPage.find_all("div", string="2")[2].find_next()
+strippedRaceRowSixWithValueThree = raceRowSixWithValueThree.text
+print(strippedRaceRowSixWithValueThree)
+
+raceRowSevenWithValueOne = parseClinicPage.find("td", class_="de-numValue_baselineDataCell").find_all_next("td", class_="de-baselineLabelCell")[18]
+strippedRaceRowSevenWithValueOne = raceRowSevenWithValueOne.text
+print(strippedRaceRowSevenWithValueOne)
+
+raceRowSevenWithValueTwo = parseClinicPage.find_all("div", string="0")[7]
+strippedRaceRowSevenWithValueTwo = raceRowSevenWithValueTwo.text
+print(strippedRaceRowSevenWithValueTwo)
+
+raceRowSevenWithValueThree = parseClinicPage.find_all("div", string="0")[7].find_next()
+strippedRaceRowSevenWithValueThree = raceRowSevenWithValueThree.text
+print(strippedRaceRowSevenWithValueThree)
+
+raceRowEightWithValueOne = parseClinicPage.find("td", class_="de-numValue_baselineDataCell").find_all_next("td", class_="de-baselineLabelCell")[19]
+strippedRaceRowEightWithValueOne = raceRowEightWithValueOne.text
+print(strippedRaceRowEightWithValueOne)
+
+raceRowEightWithValueTwo = parseClinicPage.find_all("div", string="0")[8]
+strippedRaceRowEightWithValueTwo = raceRowEightWithValueTwo.text
+print(strippedRaceRowEightWithValueTwo)
+
+raceRowEightWithValueThree = parseClinicPage.find_all("div", string="0")[8].find_next()
+strippedRaceRowEightWithValueThree = raceRowEightWithValueThree.text
+print(strippedRaceRowEightWithValueThree)
+
+
+#Region Category
+regionCategory = parseClinicPage.find_all("th", class_="de-baselineLabelCell")[8]
+strippedRegionCategory = regionCategory.text
+print(strippedRegionCategory)
+
+regionParameters = parseClinicPage.find_all("th", class_="de-baselineLabelCell")[8].find_all("div", class_="labelSubtle")[0]
+strippedRegionParameters = regionParameters.text
+print(strippedRegionParameters)
+
+regionUnitParameters = parseClinicPage.find_all("th", class_="de-baselineLabelCell")[8].find_all("div", class_="labelSubtle")[1]
+strippedRegionUnitParameter = regionUnitParameters.text
+print(strippedRegionUnitParameter)
+
+emptyRegionOne = parseClinicPage.find_all("th", class_="de-baselineLabelCell", style="border-top-color:black")[3]
+strippedEmptyRegionOne = emptyRegionOne.text
+print(strippedEmptyRegionOne)
+
+emptyRegionTwo = parseClinicPage.find_all("th", class_="de-baselineLabelCell", style="border-top-color:black")[3].find_next()
+strippedEmptyRegionTwo = emptyRegionTwo.text
+print(strippedEmptyRegionTwo)
+
+regionCol = parseClinicPage.find("td", class_="de-baselineLabelCell", rowspan="2")
+strippedRegionCol = regionCol.text
+print(strippedRegionCol)
+
+regionRowOneWithValueOne = parseClinicPage.find("td", class_="de-baselineLabelCell", rowspan="2").find_next()
+strippedRegionRowOneWithValueOne = regionRowOneWithValueOne.text
+print(strippedRegionRowOneWithValueOne)
+
+regionRowOneWithValueTwo = parseClinicPage.find("td", class_="de-baselineLabelCell", rowspan="2").find_next().find_next()
+strippedRegionRowOneWithValueTwo = regionRowOneWithValueTwo.text
+print(strippedRegionRowOneWithValueTwo)
+
+regionRowTwoWithValueOne = parseClinicPage.find("td", class_="de-numValue_baselineDataCell").find_all_next("td", class_="de-baselineLabelCell")[22]
+strippedRegionRowTwoWithValueOne = regionRowTwoWithValueOne.text
+print(strippedRegionRowTwoWithValueOne)
+
+regionRowTwoWithValueTwo = parseClinicPage.find("td", class_="de-baselineLabelCell", rowspan="2").find_next(string="2")
+strippedRegionRowTwoWithValueTwo = regionRowTwoWithValueTwo.text
+print(strippedRegionRowTwoWithValueTwo)
