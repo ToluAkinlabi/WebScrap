@@ -264,62 +264,36 @@ strippedRegionRowTwoWithValueTwo = regionRowTwoWithValueTwo.text
 #Converting scrapped data to a csv file
 #storing result as a dictionary of lists
 tableResult = {
-    "Table Header": [strippedBaselineHeading,"","","","","","","","","","",""],
-    "Table Title" : [strippedTableRowTitle, strippedTableRowDesc,strippedOverallBaseline,strippedAnalysisDesc,
+    " " : [strippedBaselineHeading,"","","","","","","",""],
 
-                     #Age Category
-                     [strippedAgeCategory, strippedEmptyAgeOne],
-                     [strippedEmptyAgeCol, [strippedAgeRowOneWithValueOne,strippedAgeRowTwoWithValueOne, strippedAgeRowThreeWithValueOne,strippedAgeRowFourWithValueOne]],
+    "Table Title" : ["",strippedTableRowTitle,strippedTableRowDesc,strippedOverallBaseline,strippedAnalysisDesc,
+                     "","","",""
 
-                     #Sex category
-                     [strippedSexCategory, strippedEmptySexOne],
-                     [strippedEmptySexCol, [strippedSexRowOneWithValueOne, strippedSexRowTwoWithValueOne, strippedSexRowThreeWithValueOne]],
+                     ],
 
-                     #Race Category
-                     [strippedRaceCategory, strippedEmptyRaceOne],
-                     [strippedEmptyRaceCol, [strippedRaceRowOneWithValueOne, strippedRaceRowTwoWithValueOne, strippedRaceRowThreeWithValueOne,strippedRaceRowFourWithValueOne,
-                                            strippedRaceRowFiveWithValueOne, strippedRaceRowSixWithValueOne, strippedRaceRowSevenWithValueOne, strippedRaceRowEightWithValueOne]],
 
-                     #Region Category
-                     [strippedRaceCategory, strippedEmptyRegionOne],
-                     [strippedRegionCol, [strippedRegionRowOneWithValueOne, strippedRegionRowTwoWithValueOne]],
-
+    "Table Desc" : ["",strippedTableRowTitleContent,strippedTableRowDescContent,strippedOverallPartValue,strippedAnalysisDescValue,
+                    "","","",""
                     ],
 
 
+    "Age, Categorical Measure Type:Count of Participants Unit of measure:  Participants" :
+                                        ["","","","","",strippedAgeRowOneWithValueOne, strippedAgeRowTwoWithValueOne,
+                                         strippedAgeRowThreeWithValueOne,strippedAgeRowFourWithValueOne
+                                       ],
 
-    "Table Title Content" : [strippedTableRowTitleContent, strippedTableRowDescContent,strippedOverallPartValue,strippedAnalysisDescValue,
 
-                             #Age Category
-                             strippedEmptyAgeTwo,[strippedAgeRowOneWithValueTwo, [strippedAgeRowTwoWithValueTwo, strippedAgeRowTwoWithValueThree],
-                                                  [strippedAgeRowThreeWithValueTwo,strippedAgeRowThreeWithValueThree],
-                                                  [strippedAgeRowFourWithValueTwo, strippedAgeRowFourWithValueThree],
-                                                  ],
+    "  " : ["","","","","",strippedAgeRowOneWithValueTwo,strippedAgeRowTwoWithValueTwo,
+            strippedAgeRowThreeWithValueTwo, strippedAgeRowFourWithValueTwo],
 
-                             #Sex Category
-                             strippedEmptySexTwo, [strippedSexRowOneWithValueTwo, [strippedSexRowTwoWithValueTwo,strippedSexRowTwoWithValueThree],
-                                                  [strippedSexRowThreeWithValueTwo, strippedSexRowThreeWithValueThree],
-                                                  ],
+    "   ": ["","","","","","",strippedAgeRowTwoWithValueThree,strippedAgeRowThreeWithValueThree,
+            strippedAgeRowFourWithValueThree]
 
-                             #Race Category
-                             strippedEmptyRaceTwo, [strippedRaceRowOneWithValueTwo, [strippedRaceRowTwoWithValueTwo,strippedRaceRowTwoWithValueThree],
-                                                   [strippedRaceRowThreeWithValueTwo,strippedRaceRowThreeWithValueThree],
-                                                   [strippedRaceRowFourWithValueTwo,strippedRaceRowFourWithValueThree],
-                                                   [strippedRaceRowFiveWithValueTwo,strippedRaceRowFiveWithValueThree],
-                                                   [strippedRaceRowSixWithValueTwo,strippedRaceRowSixWithValueThree],
-                                                   [strippedRaceRowSevenWithValueTwo,strippedRaceRowSevenWithValueThree],
-                                                   [strippedRaceRowEightWithValueTwo,strippedRaceRowEightWithValueThree],
-                                                   ],
-
-                             #Region Category
-                             strippedEmptyRegionTwo, [strippedRegionRowOneWithValueTwo, strippedRegionRowTwoWithValueTwo],
-
-                            ],
 
 }
 
 dataFrame = pd.DataFrame(tableResult)
-print("Converting data to csv file...")
+#print("Converting data to csv file...")
 print(dataFrame)
 #dataFrame.to_csv("C:\\Users\\tolul\\OneDrive\\Documents\\GitHub\\scrap.csv")
-print("Done!")
+#print("Done!")
