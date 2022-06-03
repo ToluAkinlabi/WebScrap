@@ -58,7 +58,30 @@ analysisDescValue = parseClinicPage.find("tr", id="EXPAND-analysisPop-baseline")
 strippedAnalysisDescValue = analysisDescValue.text.strip()
 print(strippedAnalysisDescValue)
 
-#Table Title
-tableTitle = parseClinicPage.find("td", class_="de-baselineLabelCell", colspan="2")
-strippedtableTitle = tableTitle.text
-print(strippedtableTitle)
+#Overall Participant
+overallParticipants = parseClinicPage.find("th", class_="de-baselineLabelCell", colspan="2")
+strippedOverallParticipants = overallParticipants.text
+print(strippedOverallParticipants)
+
+#Overall Participant Values
+overallValueOne = overallParticipants.find_next()
+strippedOverallValueOne = overallValueOne.text
+print(strippedOverallValueOne)
+
+overallValueTwo = overallValueOne.find_next()
+strippedOverallValueTwo = overallValueTwo.text
+print(strippedOverallValueTwo)
+
+overallValueThree = overallValueTwo.find_next()
+strippedOverallValueThree = overallValueThree.text
+print(strippedOverallValueThree)
+
+#Analysis Description
+analysisDesc = parseClinicPage.find("tr", id="EXPAND-analysisPop-baseline").find("span")
+strippedAnalysisDesc = analysisDesc.text.strip()
+print(strippedAnalysisDesc)
+
+#Analysis Description value
+analysisDescValue = parseClinicPage.find("tr", id="EXPAND-analysisPop-baseline").find("div")
+strippedAnalysisDescValue = analysisDescValue.text.strip()
+print(strippedAnalysisDescValue)
