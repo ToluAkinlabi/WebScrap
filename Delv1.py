@@ -264,30 +264,46 @@ strippedRegionRowTwoWithValueTwo = regionRowTwoWithValueTwo.text
 #Converting scrapped data to a csv file
 #storing result as a dictionary of lists
 tableResult = {
-    " " : [strippedBaselineHeading,"","","","","","","",""],
+    " " : [strippedBaselineHeading,"","","","","","","","","","","",""],
 
     "Table Title" : ["",strippedTableRowTitle,strippedTableRowDesc,
-                     strippedOverallBaseline,strippedAnalysisDesc,"","","",""],
+                     strippedOverallBaseline,strippedAnalysisDesc,"","","","","","","",""],
 
     "Table Desc" : ["",strippedTableRowTitleContent,strippedTableRowDescContent,
-                   strippedOverallPartValue,strippedAnalysisDescValue,"","","",""],
+                   strippedOverallPartValue,strippedAnalysisDescValue,"","","","","","","",""],
 
     "Age, Categorical" : ["","","","","",strippedAgeRowOneWithValueOne, strippedAgeRowTwoWithValueOne,
-                          strippedAgeRowThreeWithValueOne,strippedAgeRowFourWithValueOne],
+                          strippedAgeRowThreeWithValueOne,strippedAgeRowFourWithValueOne,"","","",""],
 
     "Measure Type:Count of Participants" : ["","","","","",strippedAgeRowOneWithValueTwo,strippedAgeRowTwoWithValueTwo,
-                                            strippedAgeRowThreeWithValueTwo, strippedAgeRowFourWithValueTwo],
+                                            strippedAgeRowThreeWithValueTwo, strippedAgeRowFourWithValueTwo,"","","",""],
 
     "Unit of measure:  Participants": ["","","","","","",strippedAgeRowTwoWithValueThree,
-                                       strippedAgeRowThreeWithValueThree, strippedAgeRowFourWithValueThree],
+                                       strippedAgeRowThreeWithValueThree, strippedAgeRowFourWithValueThree,"","","",""],
 
-    "Sex, Categorical" : ["","","","","",strippedSexRowOneWithValueOne,strippedSexRowTwoWithValueOne ,strippedSexRowThreeWithValueOne,""],
+    "Sex, Categorical" : ["","","","","",strippedSexRowOneWithValueOne,strippedSexRowTwoWithValueOne ,strippedSexRowThreeWithValueOne,"","","","",""],
 
-    "(S)Measure Type:Count of Participants": ["","","","","",strippedSexRowOneWithValueTwo,strippedSexRowTwoWithValueTwo,strippedSexRowThreeWithValueTwo,""],
+    "(S)Measure Type:Count of Participants": ["","","","","",strippedSexRowOneWithValueTwo,strippedSexRowTwoWithValueTwo,strippedSexRowThreeWithValueTwo,"","","","",""],
 
-    "(S)Unit of measure:  Participants": ["","","","","",strippedSexRowOneWithValueTwo,strippedSexRowTwoWithValueTwo,strippedSexRowThreeWithValueTwo,""],
+    "(S)Unit of measure:  Participants": ["","","","","","",strippedSexRowTwoWithValueTwo,strippedSexRowThreeWithValueTwo,"","","","",""],
 
+    "Race, Categorical" : ["","","","","",strippedRaceRowOneWithValueOne,strippedRaceRowTwoWithValueOne,strippedRaceRowThreeWithValueOne,
+                           strippedRaceRowFourWithValueOne,strippedRaceRowFiveWithValueOne,strippedRaceRowSixWithValueOne,strippedRaceRowSevenWithValueOne,
+                           strippedRaceRowSevenWithValueOne ],
+    "(Ra)Measure Type:Count of Participants" : ["","","","","",strippedRaceRowOneWithValueTwo,strippedRaceRowTwoWithValueTwo,strippedRaceRowThreeWithValueTwo,
+                           strippedRaceRowFourWithValueTwo,strippedRaceRowFiveWithValueTwo,strippedRaceRowSixWithValueTwo,strippedRaceRowSevenWithValueTwo,
+                           strippedRaceRowSevenWithValueTwo ],
+    "(Ra)Unit of measure:  Participants" : ["","","","","","",strippedRaceRowTwoWithValueThree,strippedRaceRowThreeWithValueThree,
+                           strippedRaceRowFourWithValueThree,strippedRaceRowFiveWithValueThree,strippedRaceRowSixWithValueThree,strippedRaceRowSevenWithValueThree,
+                           strippedRaceRowSevenWithValueThree],
 
+    "Region, Categorical" : ["","","","","",strippedRegionRowOneWithValueOne,
+                             strippedRegionRowTwoWithValueOne,"","","","","",strippedRegionCol],
+
+    "(Re)Measure Type:Count of Participants" : ["","","","","",strippedRegionRowOneWithValueTwo,
+                             strippedRegionRowTwoWithValueTwo,"","","","","","" ],
+
+    "(Re)Unit of measure:  Participants" : ["","","","","","","","","","","","","" ],
 }
 
 dataFrame = pd.DataFrame(tableResult)
