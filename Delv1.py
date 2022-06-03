@@ -266,28 +266,26 @@ strippedRegionRowTwoWithValueTwo = regionRowTwoWithValueTwo.text
 tableResult = {
     " " : [strippedBaselineHeading,"","","","","","","",""],
 
-    "Table Title" : ["",strippedTableRowTitle,strippedTableRowDesc,strippedOverallBaseline,strippedAnalysisDesc,
-                     "","","",""
+    "Table Title" : ["",strippedTableRowTitle,strippedTableRowDesc,
+                     strippedOverallBaseline,strippedAnalysisDesc,"","","",""],
 
-                     ],
+    "Table Desc" : ["",strippedTableRowTitleContent,strippedTableRowDescContent,
+                   strippedOverallPartValue,strippedAnalysisDescValue,"","","",""],
 
+    "Age, Categorical" : ["","","","","",strippedAgeRowOneWithValueOne, strippedAgeRowTwoWithValueOne,
+                          strippedAgeRowThreeWithValueOne,strippedAgeRowFourWithValueOne],
 
-    "Table Desc" : ["",strippedTableRowTitleContent,strippedTableRowDescContent,strippedOverallPartValue,strippedAnalysisDescValue,
-                    "","","",""
-                    ],
+    "Measure Type:Count of Participants" : ["","","","","",strippedAgeRowOneWithValueTwo,strippedAgeRowTwoWithValueTwo,
+                                            strippedAgeRowThreeWithValueTwo, strippedAgeRowFourWithValueTwo],
 
+    "Unit of measure:  Participants": ["","","","","","",strippedAgeRowTwoWithValueThree,
+                                       strippedAgeRowThreeWithValueThree, strippedAgeRowFourWithValueThree],
 
-    "Age, Categorical Measure Type:Count of Participants Unit of measure:  Participants" :
-                                        ["","","","","",strippedAgeRowOneWithValueOne, strippedAgeRowTwoWithValueOne,
-                                         strippedAgeRowThreeWithValueOne,strippedAgeRowFourWithValueOne
-                                       ],
+    "Sex, Categorical" : ["","","","","",strippedSexRowOneWithValueOne,strippedSexRowTwoWithValueOne ,strippedSexRowThreeWithValueOne,""],
 
+    "(S)Measure Type:Count of Participants": ["","","","","",strippedSexRowOneWithValueTwo,strippedSexRowTwoWithValueTwo,strippedSexRowThreeWithValueTwo,""],
 
-    "  " : ["","","","","",strippedAgeRowOneWithValueTwo,strippedAgeRowTwoWithValueTwo,
-            strippedAgeRowThreeWithValueTwo, strippedAgeRowFourWithValueTwo],
-
-    "   ": ["","","","","","",strippedAgeRowTwoWithValueThree,strippedAgeRowThreeWithValueThree,
-            strippedAgeRowFourWithValueThree]
+    "(S)Unit of measure:  Participants": ["","","","","",strippedSexRowOneWithValueTwo,strippedSexRowTwoWithValueTwo,strippedSexRowThreeWithValueTwo,""],
 
 
 }
