@@ -18,19 +18,47 @@ tableTitle = parseClinicPage.find("td", class_="de-baselineLabelCell", colspan="
 strippedtableTitle = tableTitle.text
 print(strippedtableTitle)
 
-standardSurgery = parseClinicPage.find("td", class_="de-baselineLabelCell", colspan="2").find_next()
+standardSurgery = tableTitle.find_next()
 strippedStandardSurgery = standardSurgery.text
 print(strippedStandardSurgery)
 
-standardSurgeryWithOOC = parseClinicPage.find("td", class_="de-baselineLabelCell", colspan="2").find_next().find_next()
+standardSurgeryWithOOC = standardSurgery.find_next()
 strippedStandardSurgeryWithOOC = standardSurgeryWithOOC.text
 print(strippedStandardSurgeryWithOOC)
 
-total = parseClinicPage.find("td", class_="de-baselineLabelCell", colspan="2").find_next().find_next().find_next()
+total = standardSurgeryWithOOC.find_next()
 strippedTotal = total.text
 print(strippedTotal)
 
 #Table Title Content
-tableRowDesc = parseClinicPage.find("span", class_="COLLAPSE de-showAndHide")
-strippedTableRowDesc = tableRowDesc.text.strip()
-print(strippedTableRowDesc)
+tableTitleContent = parseClinicPage.find("span", class_="COLLAPSE de-showAndHide").find("span")
+strippedTitleContent = tableTitleContent.text.strip()
+print(strippedTitleContent)
+
+standardSurgeryContent = tableTitleContent.find_next()
+strippedStandardSurgeryContent = standardSurgeryContent.text
+print(strippedStandardSurgeryContent)
+
+standardSurgeryWithOOContent = standardSurgeryContent.find_next()
+strippedStandardSurgeryWithOOContent = standardSurgeryWithOOContent.text
+print(strippedStandardSurgeryWithOOContent)
+
+totalContent = standardSurgeryWithOOContent.find_next()
+strippedTotalContent = totalContent.text
+print(strippedTotalContent)
+
+
+#Analysis Description
+analysisDesc = parseClinicPage.find("tr", id="EXPAND-analysisPop-baseline").find("span")
+strippedAnalysisDesc = analysisDesc.text.strip()
+print(strippedAnalysisDesc)
+
+#Analysis Description value
+analysisDescValue = parseClinicPage.find("tr", id="EXPAND-analysisPop-baseline").find("div")
+strippedAnalysisDescValue = analysisDescValue.text.strip()
+print(strippedAnalysisDescValue)
+
+#Table Title
+tableTitle = parseClinicPage.find("td", class_="de-baselineLabelCell", colspan="2")
+strippedtableTitle = tableTitle.text
+print(strippedtableTitle)
