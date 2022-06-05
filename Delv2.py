@@ -114,3 +114,53 @@ print(strippedEmptyAgeRowThree)
 emptyAgeRowFour = emptyAgeRowThree.find_next()
 strippedEmptyAgeRowFour = emptyAgeRowFour.text
 print(strippedEmptyAgeRowFour)
+
+emptyAgeCol = parseClinicPage.find("td", class_="de-baselineLabelCell", rowspan="4")
+strippedAgeCol = emptyAgeCol.text
+print(strippedAgeCol)
+
+ageRowOneValueOne = emptyAgeCol.find_next()
+strippedAgeRowOneValueOne = ageRowOneValueOne.text
+print(strippedAgeRowOneValueOne)
+
+ageRowOneValueTwo = ageRowOneValueOne.find_next()
+strippedAgeRowOneValueTwo = ageRowOneValueTwo.text
+print(strippedAgeRowOneValueTwo)
+
+ageRowOneValueThree = ageRowOneValueTwo.find_next()
+strippedAgeRowOneValueThree = ageRowOneValueThree.text
+print(strippedAgeRowOneValueThree)
+
+ageRowOneValueFour = ageRowOneValueThree.find_next()
+strippedAgeRowOneValueFour = ageRowOneValueFour.text
+print(strippedAgeRowOneValueFour)
+
+#Age Valued Row one
+ageRowTwoValueOne = parseClinicPage.find("td", class_="de-baselineLabelCell", string="<=18 years")
+strippedAgeRowTwoValueOne = ageRowTwoValueOne.text
+print(strippedAgeRowTwoValueOne)
+
+ageRowTwoValueTwo = ageRowTwoValueOne.find_next("div")
+strippedAgeRowTwoValueTwo = ageRowTwoValueTwo.text
+print(strippedAgeRowTwoValueTwo)
+
+ageRowTwoValueThree = ageRowTwoValueOne.find_next("div").find_next("span")
+strippedAgeRowTwoValueThree = ageRowTwoValueThree.text
+print(strippedAgeRowTwoValueThree)
+
+ageRowTwoValueFour = ageRowTwoValueThree.find_next("div")
+strippedAgeRowTwoValueFour = ageRowTwoValueFour.text
+print(strippedAgeRowTwoValueFour)
+
+ageRowTwoValueFive = ageRowTwoValueThree.find_next("div").find_next("span")
+strippedAgeRowTwoValueFive = ageRowTwoValueFive.text
+print(strippedAgeRowTwoValueFive)
+
+ageRowTwoValueSix = ageRowTwoValueFive.find_next("div")
+strippedAgeRowTwoValueSix = ageRowTwoValueSix.text
+print(strippedAgeRowTwoValueSix)
+
+ageRowTwoValueSeven = ageRowTwoValueFive.find_next("div").find_next("span")
+strippedAgeRowTwoValueSeven = ageRowTwoValueSeven.text
+print(strippedAgeRowTwoValueSeven)
+
