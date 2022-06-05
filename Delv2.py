@@ -164,3 +164,32 @@ ageRowTwoValueSeven = ageRowTwoValueFive.find_next("div").find_next("span")
 strippedAgeRowTwoValueSeven = ageRowTwoValueSeven.text
 print(strippedAgeRowTwoValueSeven)
 
+#Age Valued Row Two
+ageRowThreeValueOne = parseClinicPage.find("td", class_="de-baselineLabelCell", string="Between 18 and 65 years")
+strippedAgeRowThreeValueOne = ageRowThreeValueOne.text
+print(strippedAgeRowThreeValueOne)
+
+ageRowThreeValueTwo = ageRowThreeValueOne.find_next("div")
+strippedAgeRowThreeValueTwo = ageRowThreeValueTwo.text
+print(strippedAgeRowThreeValueTwo)
+
+ageRowThreeValueThree = ageRowThreeValueOne.find_next("div").find_next("span")
+strippedAgeRowThreeValueThree = ageRowThreeValueThree.text
+print(strippedAgeRowThreeValueThree)
+
+ageRowThreeValueFour = ageRowThreeValueThree.find_next("div")
+strippedAgeRowThreeValueFour = ageRowThreeValueFour.text
+print(strippedAgeRowThreeValueFour)
+
+ageRowThreeValueFive = ageRowThreeValueThree.find_next("div").find_next("span")
+strippedAgeRowThreeValueFive = ageRowThreeValueFive.text
+print(strippedAgeRowThreeValueFive)
+
+ageRowThreeValueSix = ageRowThreeValueFive.find_next("div")
+strippedAgeRowThreeValueSix = ageRowThreeValueSix.text
+print(strippedAgeRowThreeValueSix)
+
+ageRowThreeValueSeven = ageRowThreeValueFive.find_next("div").find_next("span")
+strippedAgeRowThreeValueSeven = ageRowThreeValueSeven.text
+print(strippedAgeRowThreeValueSeven)
+
