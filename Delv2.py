@@ -83,5 +83,34 @@ print(strippedAnalysisDesc)
 
 #Analysis Description value
 analysisDescValue = parseClinicPage.find("tr", id="EXPAND-analysisPop-baseline").find("div")
-strippedAnalysisDescValue = analysisDescValue.text.strip()
+strippedAnalysisDescValue = analysisDescValue.text
 print(strippedAnalysisDescValue)
+
+#Age Category
+ageCategory = parseClinicPage.find("th", class_="de-baselineLabelCell", colspan="1")
+strippedAgeCategory = ageCategory.text
+print(strippedAgeCategory)
+
+ageParameterOne = parseClinicPage.find("th", class_="de-baselineLabelCell", colspan="1").find("div", class_="labelSubtle")
+strippedAgeParameterOne = ageParameterOne.text
+print(strippedAgeParameterOne)
+
+ageParameterTwo = ageParameterOne.find_next()
+strippedAgeParameterTwo = ageParameterTwo.text
+print(strippedAgeParameterTwo)
+
+emptyAgeRowOne = ageParameterTwo.find_next()
+strippedEmptyAgeRowOne = emptyAgeRowOne.text
+print(strippedEmptyAgeRowOne)
+
+emptyAgeRowTwo = emptyAgeRowOne.find_next()
+strippedEmptyAgeRowTwo = emptyAgeRowOne.text
+print(strippedEmptyAgeRowTwo)
+
+emptyAgeRowThree = emptyAgeRowTwo.find_next()
+strippedEmptyAgeRowThree = emptyAgeRowThree.text
+print(strippedEmptyAgeRowThree)
+
+emptyAgeRowFour = emptyAgeRowThree.find_next()
+strippedEmptyAgeRowFour = emptyAgeRowFour.text
+print(strippedEmptyAgeRowFour)
