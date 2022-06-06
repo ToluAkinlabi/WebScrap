@@ -329,3 +329,78 @@ print(strippedSexRowThreeValueSix)
 sexRowThreeValueSeven = sexRowThreeValueFive.find_next("div").find_next("span")
 strippedSexRowThreeValueSeven = sexRowThreeValueSeven.text
 print(strippedSexRowThreeValueSeven)
+
+#Race Category
+raceCategory = sexRowThreeValueSeven.find_next()
+strippedRaceCategory = raceCategory.text
+print(strippedRaceCategory)
+
+raceCategoryOne = raceCategory.find("div", class_="labelSubtle")
+strippedRaceParameterOne = raceCategoryOne.text
+print(strippedRaceParameterOne)
+
+raceCategoryTwo = raceCategoryOne.find_next()
+strippedRaceParameterTwo = raceCategoryTwo.text
+print(strippedRaceParameterTwo)
+
+emptyRaceRowOne = raceCategoryTwo.find_next()
+strippedEmptyRaceRowOne = emptyRaceRowOne.text
+print(strippedEmptyRaceRowOne)
+
+emptyRaceRowTwo = emptyRaceRowOne.find_next()
+strippedEmptyRaceRowTwo = emptyRaceRowTwo.text
+print(strippedEmptyRaceRowTwo)
+
+emptyRaceRowThree = emptyRaceRowTwo.find_next()
+strippedEmptyRaceRowThree = emptyRaceRowThree.text
+print(strippedEmptyRaceRowThree)
+
+emptyRaceRowFour = emptyRaceRowThree.find_next()
+strippedEmptyRaceRowFour = emptyRaceRowFour.text
+print(strippedEmptyRaceRowFour)
+
+emptyRaceCol = parseClinicPage.find("td", class_="de-baselineLabelCell", rowspan="2")
+strippedRaceCol = emptyRaceCol.text
+print(strippedRaceCol)
+
+raceRowOneValueOne = emptyRaceCol.find_next()
+strippedRaceRowOneValueOne = raceRowOneValueOne.text
+print(strippedRaceRowOneValueOne)
+
+raceRowOneValueTwo = raceRowOneValueOne.find_next()
+strippedRaceRowOneValueTwo = raceRowOneValueTwo.text
+print(strippedRaceRowOneValueTwo)
+
+raceRowOneValueThree = raceRowOneValueTwo.find_next()
+strippedRaceRowOneValueThree = raceRowOneValueThree.text
+print(strippedRaceRowOneValueThree)
+
+raceRowOneValueFour = raceRowOneValueThree.find_next()
+strippedRaceRowOneValueFour = raceRowOneValueFour.text
+print(strippedRaceRowOneValueFour)
+
+#Valued Race Row one
+raceRowTwoValueOne = raceRowOneValueFour.find_next("td", class_="de-baselineLabelCell", string="")
+strippedRaceRowTwoValueOne = raceRowTwoValueOne.text
+print(strippedRaceRowTwoValueOne)
+
+raceRowTwoValueTwo = raceRowTwoValueOne.find_next()
+strippedRaceRowTwoValueTwo = raceRowTwoValueTwo.text
+print(strippedRaceRowTwoValueTwo)
+
+raceRowTwoValueThree = raceRowTwoValueTwo.find_next()
+strippedRaceRowTwoValueThree = raceRowTwoValueThree.text
+print(strippedRaceRowTwoValueThree)
+
+raceRowTwoValueFour = raceRowTwoValueThree.find_next()
+strippedRaceRowTwoValueFour = raceRowTwoValueFour.text
+print(strippedRaceRowTwoValueFour)
+
+#Valued Race Row Two
+raceColThree = raceRowTwoValueFour.find_next(colspan="2")
+strippedRaceColThree = raceColThree.text
+print(strippedRaceColThree)
+
+raceColFour = raceColThree.find_next()
+strippedRaceColFour = raceColFour.text
+print(strippedRaceColFour)
