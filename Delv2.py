@@ -236,3 +236,41 @@ sexCategoryTwo = sexCategoryOne.find_next()
 strippedSexParameterTwo = sexCategoryTwo.text
 print(strippedSexParameterTwo)
 
+emptySexRowOne = sexCategoryTwo.find_next()
+strippedEmptySexRowOne = emptySexRowOne.text
+print(strippedEmptySexRowOne)
+
+emptySexRowTwo = emptySexRowOne.find_next()
+strippedEmptySexRowTwo = emptySexRowTwo.text
+print(strippedEmptySexRowTwo)
+
+emptySexRowThree = emptySexRowTwo.find_next()
+strippedEmptySexRowThree = emptySexRowThree.text
+print(strippedEmptySexRowThree)
+
+emptySexRowFour = emptySexRowThree.find_next()
+strippedEmptySexRowFour = emptySexRowFour.text
+print(strippedEmptySexRowFour)
+
+emptySexCol = parseClinicPage.find("td", class_="de-baselineLabelCell", rowspan="3")
+strippedSexCol = emptySexCol.text
+print(strippedSexCol)
+
+sexRowOneValueOne = emptySexCol.find_next()
+strippedsexRowOneValueOne = sexRowOneValueOne.text
+print(strippedsexRowOneValueOne)
+
+sexRowOneValueTwo = sexRowOneValueOne.find_next()
+strippedSexRowOneValueTwo = sexRowOneValueTwo.text
+print(strippedSexRowOneValueTwo)
+
+sexRowOneValueThree = sexRowOneValueTwo.find_next()
+strippedSexRowOneValueThree = sexRowOneValueThree.text
+print(strippedSexRowOneValueThree)
+
+sexRowOneValueFour = sexRowOneValueThree.find_next()
+strippedSexRowOneValueFour = sexRowOneValueFour.text
+print(strippedSexRowOneValueFour)
+
+#Valued Sex ROw one
+
