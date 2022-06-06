@@ -272,5 +272,60 @@ sexRowOneValueFour = sexRowOneValueThree.find_next()
 strippedSexRowOneValueFour = sexRowOneValueFour.text
 print(strippedSexRowOneValueFour)
 
-#Valued Sex ROw one
+#Valued Sex Row one
+sexRowTwoValueOne = parseClinicPage.find("td", class_="de-baselineLabelCell", string="Female")
+strippedSexRowTwoValueOne = sexRowTwoValueOne.text
+print(strippedSexRowTwoValueOne)
 
+sexRowTwoValueTwo = sexRowTwoValueOne.find_next("div")
+strippedSexRowTwoValueTwo = sexRowTwoValueTwo.text
+print(strippedSexRowTwoValueTwo)
+
+sexRowTwoValueThree = sexRowTwoValueOne.find_next("div").find_next("span")
+strippedSexRowTwoValueThree = sexRowTwoValueThree.text
+print(strippedSexRowTwoValueThree)
+
+sexRowTwoValueFour = sexRowTwoValueThree.find_next("div")
+strippedSexRowTwoValueFour = sexRowTwoValueFour.text
+print(strippedSexRowTwoValueFour)
+
+sexRowTwoValueFive = sexRowTwoValueThree.find_next("div").find_next("span")
+strippedSexRowTwoValueFive = sexRowTwoValueFive.text
+print(strippedSexRowTwoValueFive)
+
+sexRowTwoValueSix = sexRowTwoValueFive.find_next("div")
+strippedSexRowTwoValueSix = sexRowTwoValueSix.text
+print(strippedSexRowTwoValueSix)
+
+sexRowTwoValueSeven = sexRowTwoValueFive.find_next("div").find_next("span")
+strippedSexRowTwoValueSeven = sexRowTwoValueSeven.text
+print(strippedSexRowTwoValueSeven)
+
+#Valued Sex Row Two
+sexRowThreeValueOne = parseClinicPage.find("td", class_="de-baselineLabelCell", string="Male")
+strippedSexRowThreeValueOne = sexRowThreeValueOne.text
+print(strippedSexRowThreeValueOne)
+
+sexRowThreeValueTwo = sexRowThreeValueOne.find_next("div")
+strippedSexRowThreeValueTwo = sexRowThreeValueTwo.text
+print(strippedSexRowThreeValueTwo)
+
+sexRowThreeValueThree = sexRowThreeValueOne.find_next("div").find_next("span")
+strippedSexRowThreeValueThree = sexRowThreeValueThree.text
+print(strippedSexRowThreeValueThree)
+
+sexRowThreeValueFour = sexRowThreeValueThree.find_next("div")
+strippedSexRowThreeValueFour = sexRowThreeValueFour.text
+print(strippedSexRowThreeValueFour)
+
+sexRowThreeValueFive = sexRowThreeValueThree.find_next("div").find_next("span")
+strippedSexRowThreeValueFive = sexRowThreeValueFive.text
+print(strippedSexRowThreeValueFive)
+
+sexRowThreeValueSix = sexRowThreeValueFive.find_next("div")
+strippedSexRowThreeValueSix = sexRowThreeValueSix.text
+print(strippedSexRowThreeValueSix)
+
+sexRowThreeValueSeven = sexRowThreeValueFive.find_next("div").find_next("span")
+strippedSexRowThreeValueSeven = sexRowThreeValueSeven.text
+print(strippedSexRowThreeValueSeven)
