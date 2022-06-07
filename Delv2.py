@@ -11,396 +11,312 @@ parseClinicPage = BeautifulSoup(clinicPage.content, "html.parser")
 
 baselineHeading = parseClinicPage.find_all('span', class_="ct-header2")[1]
 strippedBaselineHeading = baselineHeading.text.strip()
-print(strippedBaselineHeading)
 
 #Table Title
 tableTitle = parseClinicPage.find("td", class_="de-baselineLabelCell", colspan="2")
 strippedtableTitle = tableTitle.text
-print(strippedtableTitle)
 
 standardSurgery = tableTitle.find_next()
 strippedStandardSurgery = standardSurgery.text
-print(strippedStandardSurgery)
 
 standardSurgeryWithOOC = standardSurgery.find_next()
 strippedStandardSurgeryWithOOC = standardSurgeryWithOOC.text
-print(strippedStandardSurgeryWithOOC)
 
 total = standardSurgeryWithOOC.find_next()
 strippedTotal = total.text
-print(strippedTotal)
 
 #Table Title Content
 tableTitleContent = parseClinicPage.find("span", class_="COLLAPSE de-showAndHide").find("span")
 strippedTitleContent = tableTitleContent.text.strip()
-print(strippedTitleContent)
 
 standardSurgeryContent = tableTitleContent.find_next()
 strippedStandardSurgeryContent = standardSurgeryContent.text
-print(strippedStandardSurgeryContent)
 
 standardSurgeryWithOOContent = standardSurgeryContent.find_next()
 strippedStandardSurgeryWithOOContent = standardSurgeryWithOOContent.text
-print(strippedStandardSurgeryWithOOContent)
 
 totalContent = standardSurgeryWithOOContent.find_next()
 strippedTotalContent = totalContent.text
-print(strippedTotalContent)
-
-
-#Analysis Description
-analysisDesc = parseClinicPage.find("tr", id="EXPAND-analysisPop-baseline").find("span")
-strippedAnalysisDesc = analysisDesc.text.strip()
-print(strippedAnalysisDesc)
-
-#Analysis Description value
-analysisDescValue = parseClinicPage.find("tr", id="EXPAND-analysisPop-baseline").find("div")
-strippedAnalysisDescValue = analysisDescValue.text.strip()
-print(strippedAnalysisDescValue)
 
 #Overall Participant
 overallParticipants = parseClinicPage.find("th", class_="de-baselineLabelCell", colspan="2")
 strippedOverallParticipants = overallParticipants.text
-print(strippedOverallParticipants)
 
 #Overall Participant Values
 overallValueOne = overallParticipants.find_next()
 strippedOverallValueOne = overallValueOne.text
-print(strippedOverallValueOne)
 
 overallValueTwo = overallValueOne.find_next()
 strippedOverallValueTwo = overallValueTwo.text
-print(strippedOverallValueTwo)
 
 overallValueThree = overallValueTwo.find_next()
 strippedOverallValueThree = overallValueThree.text
-print(strippedOverallValueThree)
 
 #Analysis Description
 analysisDesc = parseClinicPage.find("tr", id="EXPAND-analysisPop-baseline").find("span")
 strippedAnalysisDesc = analysisDesc.text.strip()
-print(strippedAnalysisDesc)
 
 #Analysis Description value
 analysisDescValue = parseClinicPage.find("tr", id="EXPAND-analysisPop-baseline").find("div")
 strippedAnalysisDescValue = analysisDescValue.text
-print(strippedAnalysisDescValue)
 
 #Age Category
 ageCategory = parseClinicPage.find("th", class_="de-baselineLabelCell", colspan="1")
 strippedAgeCategory = ageCategory.text
-print(strippedAgeCategory)
 
 ageParameterOne = parseClinicPage.find("th", class_="de-baselineLabelCell", colspan="1").find("div", class_="labelSubtle")
 strippedAgeParameterOne = ageParameterOne.text
-print(strippedAgeParameterOne)
 
 ageParameterTwo = ageParameterOne.find_next()
 strippedAgeParameterTwo = ageParameterTwo.text
-print(strippedAgeParameterTwo)
 
 emptyAgeRowOne = ageParameterTwo.find_next()
 strippedEmptyAgeRowOne = emptyAgeRowOne.text
-print(strippedEmptyAgeRowOne)
 
 emptyAgeRowTwo = emptyAgeRowOne.find_next()
 strippedEmptyAgeRowTwo = emptyAgeRowOne.text
-print(strippedEmptyAgeRowTwo)
 
 emptyAgeRowThree = emptyAgeRowTwo.find_next()
 strippedEmptyAgeRowThree = emptyAgeRowThree.text
-print(strippedEmptyAgeRowThree)
 
 emptyAgeRowFour = emptyAgeRowThree.find_next()
 strippedEmptyAgeRowFour = emptyAgeRowFour.text
-print(strippedEmptyAgeRowFour)
 
 emptyAgeCol = parseClinicPage.find("td", class_="de-baselineLabelCell", rowspan="4")
 strippedAgeCol = emptyAgeCol.text
-print(strippedAgeCol)
 
 ageRowOneValueOne = emptyAgeCol.find_next()
 strippedAgeRowOneValueOne = ageRowOneValueOne.text
-print(strippedAgeRowOneValueOne)
 
 ageRowOneValueTwo = ageRowOneValueOne.find_next()
 strippedAgeRowOneValueTwo = ageRowOneValueTwo.text
-print(strippedAgeRowOneValueTwo)
 
 ageRowOneValueThree = ageRowOneValueTwo.find_next()
 strippedAgeRowOneValueThree = ageRowOneValueThree.text
-print(strippedAgeRowOneValueThree)
 
 ageRowOneValueFour = ageRowOneValueThree.find_next()
 strippedAgeRowOneValueFour = ageRowOneValueFour.text
-print(strippedAgeRowOneValueFour)
 
 #Age Valued Row one
 ageRowTwoValueOne = parseClinicPage.find("td", class_="de-baselineLabelCell", string="<=18 years")
 strippedAgeRowTwoValueOne = ageRowTwoValueOne.text
-print(strippedAgeRowTwoValueOne)
 
 ageRowTwoValueTwo = ageRowTwoValueOne.find_next("div")
 strippedAgeRowTwoValueTwo = ageRowTwoValueTwo.text
-print(strippedAgeRowTwoValueTwo)
 
 ageRowTwoValueThree = ageRowTwoValueOne.find_next("div").find_next("span")
 strippedAgeRowTwoValueThree = ageRowTwoValueThree.text
-print(strippedAgeRowTwoValueThree)
 
 ageRowTwoValueFour = ageRowTwoValueThree.find_next("div")
 strippedAgeRowTwoValueFour = ageRowTwoValueFour.text
-print(strippedAgeRowTwoValueFour)
 
 ageRowTwoValueFive = ageRowTwoValueThree.find_next("div").find_next("span")
 strippedAgeRowTwoValueFive = ageRowTwoValueFive.text
-print(strippedAgeRowTwoValueFive)
 
 ageRowTwoValueSix = ageRowTwoValueFive.find_next("div")
 strippedAgeRowTwoValueSix = ageRowTwoValueSix.text
-print(strippedAgeRowTwoValueSix)
 
 ageRowTwoValueSeven = ageRowTwoValueFive.find_next("div").find_next("span")
 strippedAgeRowTwoValueSeven = ageRowTwoValueSeven.text
-print(strippedAgeRowTwoValueSeven)
 
 #Age Valued Row Two
 ageRowThreeValueOne = parseClinicPage.find("td", class_="de-baselineLabelCell", string="Between 18 and 65 years")
 strippedAgeRowThreeValueOne = ageRowThreeValueOne.text
-print(strippedAgeRowThreeValueOne)
 
 ageRowThreeValueTwo = ageRowThreeValueOne.find_next("div")
 strippedAgeRowThreeValueTwo = ageRowThreeValueTwo.text
-print(strippedAgeRowThreeValueTwo)
 
 ageRowThreeValueThree = ageRowThreeValueOne.find_next("div").find_next("span")
 strippedAgeRowThreeValueThree = ageRowThreeValueThree.text
-print(strippedAgeRowThreeValueThree)
 
 ageRowThreeValueFour = ageRowThreeValueThree.find_next("div")
 strippedAgeRowThreeValueFour = ageRowThreeValueFour.text
-print(strippedAgeRowThreeValueFour)
 
 ageRowThreeValueFive = ageRowThreeValueThree.find_next("div").find_next("span")
 strippedAgeRowThreeValueFive = ageRowThreeValueFive.text
-print(strippedAgeRowThreeValueFive)
 
 ageRowThreeValueSix = ageRowThreeValueFive.find_next("div")
 strippedAgeRowThreeValueSix = ageRowThreeValueSix.text
-print(strippedAgeRowThreeValueSix)
 
 ageRowThreeValueSeven = ageRowThreeValueFive.find_next("div").find_next("span")
 strippedAgeRowThreeValueSeven = ageRowThreeValueSeven.text
-print(strippedAgeRowThreeValueSeven)
 
 #Age Valued Row Three
 ageRowFourValueOne = parseClinicPage.find("td", class_="de-baselineLabelCell", string=">=65 years")
 strippedAgeRowFourValueOne = ageRowFourValueOne.text
-print(strippedAgeRowFourValueOne)
 
 ageRowFourValueTwo = ageRowFourValueOne.find_next("div")
 strippedAgeRowFourValueTwo = ageRowFourValueTwo.text
-print(strippedAgeRowFourValueTwo)
 
 ageRowFourValueThree = ageRowFourValueOne.find_next("div").find_next("span")
 strippedAgeRowFourValueThree = ageRowFourValueThree.text
-print(strippedAgeRowFourValueThree)
 
 ageRowFourValueFour = ageRowFourValueThree.find_next("div")
 strippedAgeRowFourValueFour = ageRowFourValueFour.text
-print(strippedAgeRowFourValueFour)
 
 ageRowFourValueFive = ageRowFourValueThree.find_next("div").find_next("span")
 strippedAgeRowFourValueFive = ageRowFourValueFive.text
-print(strippedAgeRowFourValueFive)
 
 ageRowFourValueSix = ageRowFourValueFive.find_next("div")
 strippedAgeRowFourValueSix = ageRowFourValueSix.text
-print(strippedAgeRowFourValueSix)
 
 ageRowFourValueSeven = ageRowFourValueFive.find_next("div").find_next("span")
 strippedAgeRowFourValueSeven = ageRowFourValueSeven.text
-print(strippedAgeRowFourValueSeven)
 
 
 #Sex Category
 sexCategory = ageRowFourValueSeven.find_next()
 strippedSexCategory = sexCategory.text
-print(strippedSexCategory)
 
 sexCategoryOne = sexCategory.find("div", class_="labelSubtle")
 strippedSexParameterOne = sexCategoryOne.text
-print(strippedSexParameterOne)
 
 sexCategoryTwo = sexCategoryOne.find_next()
 strippedSexParameterTwo = sexCategoryTwo.text
-print(strippedSexParameterTwo)
 
 emptySexRowOne = sexCategoryTwo.find_next()
 strippedEmptySexRowOne = emptySexRowOne.text
-print(strippedEmptySexRowOne)
 
 emptySexRowTwo = emptySexRowOne.find_next()
 strippedEmptySexRowTwo = emptySexRowTwo.text
-print(strippedEmptySexRowTwo)
 
 emptySexRowThree = emptySexRowTwo.find_next()
 strippedEmptySexRowThree = emptySexRowThree.text
-print(strippedEmptySexRowThree)
 
 emptySexRowFour = emptySexRowThree.find_next()
 strippedEmptySexRowFour = emptySexRowFour.text
-print(strippedEmptySexRowFour)
 
 emptySexCol = parseClinicPage.find("td", class_="de-baselineLabelCell", rowspan="3")
 strippedSexCol = emptySexCol.text
-print(strippedSexCol)
 
 sexRowOneValueOne = emptySexCol.find_next()
 strippedsexRowOneValueOne = sexRowOneValueOne.text
-print(strippedsexRowOneValueOne)
 
 sexRowOneValueTwo = sexRowOneValueOne.find_next()
 strippedSexRowOneValueTwo = sexRowOneValueTwo.text
-print(strippedSexRowOneValueTwo)
 
 sexRowOneValueThree = sexRowOneValueTwo.find_next()
 strippedSexRowOneValueThree = sexRowOneValueThree.text
-print(strippedSexRowOneValueThree)
 
 sexRowOneValueFour = sexRowOneValueThree.find_next()
 strippedSexRowOneValueFour = sexRowOneValueFour.text
-print(strippedSexRowOneValueFour)
 
 #Valued Sex Row one
 sexRowTwoValueOne = parseClinicPage.find("td", class_="de-baselineLabelCell", string="Female")
 strippedSexRowTwoValueOne = sexRowTwoValueOne.text
-print(strippedSexRowTwoValueOne)
 
 sexRowTwoValueTwo = sexRowTwoValueOne.find_next("div")
 strippedSexRowTwoValueTwo = sexRowTwoValueTwo.text
-print(strippedSexRowTwoValueTwo)
 
 sexRowTwoValueThree = sexRowTwoValueOne.find_next("div").find_next("span")
 strippedSexRowTwoValueThree = sexRowTwoValueThree.text
-print(strippedSexRowTwoValueThree)
 
 sexRowTwoValueFour = sexRowTwoValueThree.find_next("div")
 strippedSexRowTwoValueFour = sexRowTwoValueFour.text
-print(strippedSexRowTwoValueFour)
 
 sexRowTwoValueFive = sexRowTwoValueThree.find_next("div").find_next("span")
 strippedSexRowTwoValueFive = sexRowTwoValueFive.text
-print(strippedSexRowTwoValueFive)
 
 sexRowTwoValueSix = sexRowTwoValueFive.find_next("div")
 strippedSexRowTwoValueSix = sexRowTwoValueSix.text
-print(strippedSexRowTwoValueSix)
 
 sexRowTwoValueSeven = sexRowTwoValueFive.find_next("div").find_next("span")
 strippedSexRowTwoValueSeven = sexRowTwoValueSeven.text
-print(strippedSexRowTwoValueSeven)
 
 #Valued Sex Row Two
 sexRowThreeValueOne = parseClinicPage.find("td", class_="de-baselineLabelCell", string="Male")
 strippedSexRowThreeValueOne = sexRowThreeValueOne.text
-print(strippedSexRowThreeValueOne)
 
 sexRowThreeValueTwo = sexRowThreeValueOne.find_next("div")
 strippedSexRowThreeValueTwo = sexRowThreeValueTwo.text
-print(strippedSexRowThreeValueTwo)
 
 sexRowThreeValueThree = sexRowThreeValueOne.find_next("div").find_next("span")
 strippedSexRowThreeValueThree = sexRowThreeValueThree.text
-print(strippedSexRowThreeValueThree)
 
 sexRowThreeValueFour = sexRowThreeValueThree.find_next("div")
 strippedSexRowThreeValueFour = sexRowThreeValueFour.text
-print(strippedSexRowThreeValueFour)
 
 sexRowThreeValueFive = sexRowThreeValueThree.find_next("div").find_next("span")
 strippedSexRowThreeValueFive = sexRowThreeValueFive.text
-print(strippedSexRowThreeValueFive)
 
 sexRowThreeValueSix = sexRowThreeValueFive.find_next("div")
 strippedSexRowThreeValueSix = sexRowThreeValueSix.text
-print(strippedSexRowThreeValueSix)
 
 sexRowThreeValueSeven = sexRowThreeValueFive.find_next("div").find_next("span")
 strippedSexRowThreeValueSeven = sexRowThreeValueSeven.text
-print(strippedSexRowThreeValueSeven)
 
 #Race Category
 raceCategory = sexRowThreeValueSeven.find_next()
 strippedRaceCategory = raceCategory.text
-print(strippedRaceCategory)
 
 raceCategoryOne = raceCategory.find("div", class_="labelSubtle")
 strippedRaceParameterOne = raceCategoryOne.text
-print(strippedRaceParameterOne)
 
 raceCategoryTwo = raceCategoryOne.find_next()
 strippedRaceParameterTwo = raceCategoryTwo.text
-print(strippedRaceParameterTwo)
 
 emptyRaceRowOne = raceCategoryTwo.find_next()
 strippedEmptyRaceRowOne = emptyRaceRowOne.text
-print(strippedEmptyRaceRowOne)
 
 emptyRaceRowTwo = emptyRaceRowOne.find_next()
 strippedEmptyRaceRowTwo = emptyRaceRowTwo.text
-print(strippedEmptyRaceRowTwo)
 
 emptyRaceRowThree = emptyRaceRowTwo.find_next()
 strippedEmptyRaceRowThree = emptyRaceRowThree.text
-print(strippedEmptyRaceRowThree)
 
 emptyRaceRowFour = emptyRaceRowThree.find_next()
 strippedEmptyRaceRowFour = emptyRaceRowFour.text
-print(strippedEmptyRaceRowFour)
 
 emptyRaceCol = parseClinicPage.find("td", class_="de-baselineLabelCell", rowspan="2")
 strippedRaceCol = emptyRaceCol.text
-print(strippedRaceCol)
 
 raceRowOneValueOne = emptyRaceCol.find_next()
 strippedRaceRowOneValueOne = raceRowOneValueOne.text
-print(strippedRaceRowOneValueOne)
 
 raceRowOneValueTwo = raceRowOneValueOne.find_next()
 strippedRaceRowOneValueTwo = raceRowOneValueTwo.text
-print(strippedRaceRowOneValueTwo)
 
 raceRowOneValueThree = raceRowOneValueTwo.find_next()
 strippedRaceRowOneValueThree = raceRowOneValueThree.text
-print(strippedRaceRowOneValueThree)
 
 raceRowOneValueFour = raceRowOneValueThree.find_next()
 strippedRaceRowOneValueFour = raceRowOneValueFour.text
-print(strippedRaceRowOneValueFour)
 
 #Valued Race Row one
 raceRowTwoValueOne = raceRowOneValueFour.find_next("td", class_="de-baselineLabelCell", string="")
 strippedRaceRowTwoValueOne = raceRowTwoValueOne.text
-print(strippedRaceRowTwoValueOne)
 
 raceRowTwoValueTwo = raceRowTwoValueOne.find_next()
 strippedRaceRowTwoValueTwo = raceRowTwoValueTwo.text
-print(strippedRaceRowTwoValueTwo)
 
 raceRowTwoValueThree = raceRowTwoValueTwo.find_next()
 strippedRaceRowTwoValueThree = raceRowTwoValueThree.text
-print(strippedRaceRowTwoValueThree)
 
 raceRowTwoValueFour = raceRowTwoValueThree.find_next()
 strippedRaceRowTwoValueFour = raceRowTwoValueFour.text
-print(strippedRaceRowTwoValueFour)
 
 #Valued Race Row Two
 raceColThree = raceRowTwoValueFour.find_next(colspan="2")
 strippedRaceColThree = raceColThree.text
-print(strippedRaceColThree)
 
 raceColFour = raceColThree.find_next()
 strippedRaceColFour = raceColFour.text
-print(strippedRaceColFour)
+
+#Convert scraped data to csv file
+tableCSV = {
+    "" : [strippedBaselineHeading,"","","","","",""],
+    "Table Title" : [strippedtableTitle,strippedStandardSurgery,strippedStandardSurgeryWithOOC,strippedTotal,
+                     strippedOverallParticipants,strippedAnalysisDesc,""],
+    "Table Description" : [strippedTitleContent,strippedStandardSurgeryContent,strippedStandardSurgeryWithOOContent,
+                           strippedTotalContent, strippedOverallValueOne,strippedAnalysisDescValue,""],
+    " " :["","","","",strippedOverallValueTwo,"",""],
+    "  " :["","","","",strippedOverallValueThree,"",""],
+    "Age Categorical" : ["","","","","","",strippedAgeCategory]
+
+}
+
+dataFrame = pd.DataFrame(tableCSV)
+#print("Converting data to csv file...")
+print(dataFrame)
+dataFrame.to_csv("C:\\Users\\tolul\\OneDrive\\Documents\\GitHub\\scrap2.csv")
+#print("Done!")
