@@ -270,6 +270,7 @@ strippedEmptyRaceRowFour = emptyRaceRowFour.text
 emptyRaceCol = parseClinicPage.find("td", class_="de-baselineLabelCell", rowspan="2")
 strippedRaceCol = emptyRaceCol.text
 
+#Valued Race Row one
 raceRowOneValueOne = emptyRaceCol.find_next()
 strippedRaceRowOneValueOne = raceRowOneValueOne.text
 
@@ -282,7 +283,7 @@ strippedRaceRowOneValueThree = raceRowOneValueThree.text
 raceRowOneValueFour = raceRowOneValueThree.find_next()
 strippedRaceRowOneValueFour = raceRowOneValueFour.text
 
-#Valued Race Row one
+#Valued Race Row Two
 raceRowTwoValueOne = raceRowOneValueFour.find_next("td", class_="de-baselineLabelCell", string="")
 strippedRaceRowTwoValueOne = raceRowTwoValueOne.text
 
@@ -317,6 +318,7 @@ tableCSV = {
 
     "  " :["","","",strippedOverallValueThree,"","","","","","","","","","","","","",],
 
+    #Age Category
     "Age Categorical" : ["","","","","",strippedAgeRowOneValueOne,"","",strippedAgeRowTwoValueOne,"","",
                          strippedAgeRowThreeValueOne,"","",strippedAgeRowFourValueOne,"","",],
 
@@ -331,12 +333,33 @@ tableCSV = {
                                            strippedAgeRowFourValueThree,strippedAgeRowFourValueFive,strippedAgeRowFourValueSeven,],
 
 
-    
+
+    #Sex Category
+    "Sex Categorical" : ["","","","","",strippedsexRowOneValueOne,"","",strippedSexRowTwoValueOne,"","",
+                         strippedSexRowThreeValueOne,"","","","","",],
+
+    "(S) Measure Type: COP" : ["","","","","",strippedSexRowOneValueTwo,strippedSexRowOneValueThree,strippedSexRowOneValueFour,
+                              strippedSexRowTwoValueTwo,strippedSexRowTwoValueFour,strippedSexRowTwoValueSix,
+                              strippedSexRowThreeValueTwo,strippedSexRowThreeValueFour,strippedSexRowThreeValueSix,
+                              "","","",],
+
+    "(S) Unit of Measure : Participants" : ["","","","","","","","",
+                                           strippedSexRowTwoValueThree,strippedSexRowTwoValueFive,strippedSexRowTwoValueSeven,
+                                           strippedSexRowThreeValueThree,strippedSexRowThreeValueFive,strippedSexRowThreeValueSeven,
+                                           "","","",],
+
+    #Race Category
+    "Race Categorical" : ["","","","","",strippedRaceRowOneValueOne,"","",strippedRaceRowTwoValueOne,"","","","","","","","",],
+
+    "(R) Measure Type: COP" : ["","","","","",strippedRaceRowOneValueTwo,strippedRaceRowOneValueThree,strippedRaceRowOneValueFour,
+                              strippedRaceRowTwoValueTwo,strippedRaceRowTwoValueThree,strippedRaceRowTwoValueFour,strippedRaceColFour,"","","","","",],
+
+    "(R) Unit of Measure : Participants" : ["","","","","","","","","","","","","","","","","",],
 
 }
 
 dataFrame = pd.DataFrame(tableCSV)
 #print("Converting data to csv file...")
 print(dataFrame)
-#dataFrame.to_csv("C:\\Users\\tolul\\OneDrive\\Documents\\GitHub\\scrap2.csv")
+dataFrame.to_csv("C:\\Users\\tolul\\OneDrive\\Documents\\GitHub\\scrap2.csv")
 #print("Done!")
