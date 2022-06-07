@@ -304,19 +304,39 @@ strippedRaceColFour = raceColFour.text
 
 #Convert scraped data to csv file
 tableCSV = {
-    "" : [strippedBaselineHeading,"","","","","",""],
-    "Table Title" : [strippedtableTitle,strippedStandardSurgery,strippedStandardSurgeryWithOOC,strippedTotal,
-                     strippedOverallParticipants,strippedAnalysisDesc,""],
-    "Table Description" : [strippedTitleContent,strippedStandardSurgeryContent,strippedStandardSurgeryWithOOContent,
-                           strippedTotalContent, strippedOverallValueOne,strippedAnalysisDescValue,""],
-    " " :["","","","",strippedOverallValueTwo,"",""],
-    "  " :["","","","",strippedOverallValueThree,"",""],
-    "Age Categorical" : ["","","","","","",strippedAgeCategory]
+    "Baseline Characteristics" : ["","","","","","","","","","","","","","","","","",],
+
+    "Arm/Group Title" : [strippedStandardSurgery,strippedStandardSurgeryWithOOC,strippedTotal,
+                     strippedOverallParticipants,strippedAnalysisDesc,"","","","","","","","","","","","",],
+
+    "Arm/Group Description" : [strippedStandardSurgeryContent,strippedStandardSurgeryWithOOContent,
+                           strippedTotalContent, strippedOverallValueOne,strippedAnalysisDescValue,"","","",""
+                               ,"","","","","","","","",],
+
+    " " :["","","",strippedOverallValueTwo,"","","","","","","","","","","","","",],
+
+    "  " :["","","",strippedOverallValueThree,"","","","","","","","","","","","","",],
+
+    "Age Categorical" : ["","","","","",strippedAgeRowOneValueOne,"","",strippedAgeRowTwoValueOne,"","",
+                         strippedAgeRowThreeValueOne,"","",strippedAgeRowFourValueOne,"","",],
+
+    "(A) Measure Type: COP" : ["","","","","",strippedAgeRowOneValueTwo,strippedAgeRowOneValueThree,strippedAgeRowOneValueFour,
+                              strippedAgeRowTwoValueTwo,strippedAgeRowTwoValueFour,strippedAgeRowTwoValueSix,
+                              strippedAgeRowThreeValueTwo,strippedAgeRowThreeValueFour,strippedAgeRowThreeValueSix,
+                              strippedAgeRowFourValueTwo,strippedAgeRowFourValueFour,strippedAgeRowFourValueSix,],
+
+    "(A) Unit of Measure : Participants" : ["","","","","","","","",
+                                           strippedAgeRowTwoValueThree,strippedAgeRowTwoValueFive,strippedAgeRowTwoValueSeven,
+                                           strippedAgeRowThreeValueThree,strippedAgeRowThreeValueFive,strippedAgeRowThreeValueSeven,
+                                           strippedAgeRowFourValueThree,strippedAgeRowFourValueFive,strippedAgeRowFourValueSeven,],
+
+
+    
 
 }
 
 dataFrame = pd.DataFrame(tableCSV)
 #print("Converting data to csv file...")
 print(dataFrame)
-dataFrame.to_csv("C:\\Users\\tolul\\OneDrive\\Documents\\GitHub\\scrap2.csv")
+#dataFrame.to_csv("C:\\Users\\tolul\\OneDrive\\Documents\\GitHub\\scrap2.csv")
 #print("Done!")
