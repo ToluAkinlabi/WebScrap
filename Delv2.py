@@ -40,7 +40,7 @@ strippedTotalContent = totalContent.text
 
 #Overall Participant
 overallParticipants = parseClinicPage.find("th", class_="de-baselineLabelCell", colspan="2")
-strippedOverallParticipants = overallParticipants.text
+strippedOverallParticipants = ''.join([i if ord(i) < 128 else '' for i in overallParticipants.text])
 
 #Overall Participant Values
 overallValueOne = overallParticipants.find_next()
@@ -62,7 +62,7 @@ strippedAnalysisDescValue = analysisDescValue.text
 
 #Age Category
 ageCategory = parseClinicPage.find("th", class_="de-baselineLabelCell", colspan="1")
-strippedAgeCategory = ageCategory.text
+strippedAgeCategory = ''.join([i if ord(i) < 128 else '' for i in ageCategory.text])
 
 ageParameterOne = parseClinicPage.find("th", class_="de-baselineLabelCell", colspan="1").find("div", class_="labelSubtle")
 strippedAgeParameterOne = ageParameterOne.text
@@ -190,7 +190,7 @@ emptySexCol = parseClinicPage.find("td", class_="de-baselineLabelCell", rowspan=
 strippedSexCol = emptySexCol.text
 
 sexRowOneValueOne = emptySexCol.find_next()
-strippedsexRowOneValueOne = sexRowOneValueOne.text
+strippedSexRowOneValueOne = sexRowOneValueOne.text
 
 sexRowOneValueTwo = sexRowOneValueOne.find_next()
 strippedSexRowOneValueTwo = sexRowOneValueTwo.text
@@ -305,12 +305,32 @@ strippedRaceColFour = raceColFour.text
 
 #Convert scraped data to csv file
 tableCSV = {
-    
+    "" : ["","","","","","","","","","","","",],
+
+    "Standard Surgery" : ["Description",strippedOverallParticipants, strippedAnalysisDesc,
+                          strippedAgeRowOneValueOne,"Age Category","Measure Type : Count of Participant", "Unit of Measure : Participant","",
+                          strippedSexRowOneValueOne,"Sex Category","Measure Type : Count of Participant", "Unit of Measure : Participant",
+                          ],
+
+    " " : [strippedStandardSurgeryContent,strippedOverallValueOne,strippedAnalysisDescValue,
+           strippedAgeRowOneValueTwo,strippedAgeRowTwoValueOne,strippedAgeRowTwoValueTwo,strippedAgeRowTwoValueThree,"",
+           strippedSexRowOneValueTwo, strippedSexRowTwoValueOne, strippedSexRowTwoValueTwo,strippedSexRowTwoValueThree,
+           ],
+
+    "  " : ["","","","",strippedAgeRowThreeValueOne,strippedAgeRowThreeValueTwo, strippedAgeRowThreeValueThree,"",
+            "",strippedSexRowThreeValueOne,strippedSexRowThreeValueTwo,strippedSexRowThreeValueThree,
+            ],
+
+    "   ": ["", "", "","", strippedAgeRowFourValueOne, strippedAgeRowFourValueTwo, strippedAgeRowFourValueThree,"",
+            "","","","",
+
+            ],
+
 
 }
 
 dataFrame = pd.DataFrame(tableCSV)
 #print("Converting data to csv file...")
-#print(dataFrame)
+print(dataFrame)
 dataFrame.to_csv("C:\\Users\\tolul\\OneDrive\\Documents\\GitHub\\scrap2.csv")
 #print("Done!")
