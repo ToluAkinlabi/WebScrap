@@ -305,25 +305,79 @@ strippedRaceColFour = raceColFour.text
 
 #Convert scraped data to csv file
 tableCSV = {
-    "" : ["","","","","","","","","","","","",],
+
+    #Standard Surgery
+    "" : ["","","","","","","","","","","","","","",""],
 
     "Standard Surgery" : ["Description",strippedOverallParticipants, strippedAnalysisDesc,
                           strippedAgeRowOneValueOne,"Age Category","Measure Type : Count of Participant", "Unit of Measure : Participant","",
-                          strippedSexRowOneValueOne,"Sex Category","Measure Type : Count of Participant", "Unit of Measure : Participant",
+                          strippedSexRowOneValueOne,"Sex Category","Measure Type : Count of Participant", "Unit of Measure : Participant","",
+                          strippedRaceRowOneValueOne,"Race Category"
                           ],
 
     " " : [strippedStandardSurgeryContent,strippedOverallValueOne,strippedAnalysisDescValue,
            strippedAgeRowOneValueTwo,strippedAgeRowTwoValueOne,strippedAgeRowTwoValueTwo,strippedAgeRowTwoValueThree,"",
-           strippedSexRowOneValueTwo, strippedSexRowTwoValueOne, strippedSexRowTwoValueTwo,strippedSexRowTwoValueThree,
+           strippedSexRowOneValueTwo, strippedSexRowTwoValueOne, strippedSexRowTwoValueTwo,strippedSexRowTwoValueThree,"",
+           strippedRaceRowOneValueTwo,""
            ],
 
     "  " : ["","","","",strippedAgeRowThreeValueOne,strippedAgeRowThreeValueTwo, strippedAgeRowThreeValueThree,"",
-            "",strippedSexRowThreeValueOne,strippedSexRowThreeValueTwo,strippedSexRowThreeValueThree,
+            "",strippedSexRowThreeValueOne,strippedSexRowThreeValueTwo,strippedSexRowThreeValueThree,"",
+            "","",
             ],
 
     "   ": ["", "", "","", strippedAgeRowFourValueOne, strippedAgeRowFourValueTwo, strippedAgeRowFourValueThree,"",
-            "","","","",
+            "","","","","",
+            "","",
+            ],
 
+
+    #Standard Surgery With OOC
+    "    " : ["","","","","","","","","","","","","","",""],
+   "Standard Surgery with OOC" : ["Description",strippedOverallParticipants, strippedAnalysisDesc,
+                          strippedAgeRowOneValueOne,"Age Category","Measure Type : Count of Participant", "Unit of Measure : Participant","",
+                          strippedSexRowOneValueOne,"Sex Category","Measure Type : Count of Participant", "Unit of Measure : Participant","",
+                          strippedRaceRowOneValueOne,"Race Category"
+                          ],
+
+    "     " : [strippedStandardSurgeryWithOOContent,strippedOverallValueTwo,strippedAnalysisDescValue,
+           strippedAgeRowOneValueThree,strippedAgeRowTwoValueOne,strippedAgeRowTwoValueFour,strippedAgeRowTwoValueFive,"",
+           strippedSexRowOneValueThree, strippedSexRowTwoValueOne, strippedSexRowTwoValueFour,strippedSexRowTwoValueFive,"",
+           strippedRaceRowOneValueThree,""
+           ],
+
+    "      " : ["","","","",strippedAgeRowThreeValueOne,strippedAgeRowThreeValueFour, strippedAgeRowThreeValueFive,"",
+            "",strippedSexRowThreeValueOne,strippedSexRowThreeValueFour,strippedSexRowThreeValueFive,"",
+            "","",
+            ],
+
+    "       ": ["", "", "","", strippedAgeRowFourValueOne, strippedAgeRowFourValueTwo, strippedAgeRowFourValueThree,"",
+            "","","","","",
+            "","",
+            ],
+
+#Total
+    "        " : ["","","","","","","","","","","","","","",""],
+   "Total" : ["Description",strippedOverallParticipants, strippedAnalysisDesc,
+                          strippedAgeRowOneValueOne,"Age Category","Measure Type : Count of Participant", "Unit of Measure : Participant","",
+                          strippedSexRowOneValueOne,"Sex Category","Measure Type : Count of Participant", "Unit of Measure : Participant","",
+                          strippedRaceRowOneValueOne,"Race Category"
+                          ],
+
+    "         " : [strippedTotalContent,strippedOverallValueThree,strippedAnalysisDescValue,
+           strippedAgeRowOneValueThree,strippedAgeRowTwoValueOne,strippedAgeRowTwoValueSix,strippedAgeRowTwoValueSeven,"",
+           strippedSexRowOneValueFour, strippedSexRowTwoValueOne, strippedSexRowTwoValueSix,strippedSexRowTwoValueSeven,"",
+           strippedRaceRowOneValueFour,""
+           ],
+
+    "          " : ["","","","",strippedAgeRowThreeValueOne,strippedAgeRowThreeValueSix, strippedAgeRowThreeValueFive,"",
+            "",strippedSexRowThreeValueOne,strippedSexRowThreeValueSix,strippedSexRowThreeValueSeven,"",
+            "","",
+            ],
+
+    "           ": ["", "", "","", strippedAgeRowFourValueOne, strippedAgeRowFourValueSix, strippedAgeRowFourValueSeven,"",
+            "","","","","",
+            "",strippedRaceRowTwoValueFour,
             ],
 
 
@@ -331,6 +385,6 @@ tableCSV = {
 
 dataFrame = pd.DataFrame(tableCSV)
 #print("Converting data to csv file...")
-print(dataFrame)
+#print(dataFrame)
 dataFrame.to_csv("C:\\Users\\tolul\\OneDrive\\Documents\\GitHub\\scrap2.csv")
 #print("Done!")
