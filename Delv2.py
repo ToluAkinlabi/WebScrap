@@ -105,19 +105,19 @@ ageRowTwoValueTwo = ageRowTwoValueOne.find_next("div")
 strippedAgeRowTwoValueTwo = ageRowTwoValueTwo.text
 
 ageRowTwoValueThree = ageRowTwoValueOne.find_next("div").find_next("span")
-strippedAgeRowTwoValueThree = ageRowTwoValueThree.text
+strippedAgeRowTwoValueThree = ''.join([i if ord(i) < 128 else '' for i in ageRowTwoValueThree.text])
 
 ageRowTwoValueFour = ageRowTwoValueThree.find_next("div")
 strippedAgeRowTwoValueFour = ageRowTwoValueFour.text
 
 ageRowTwoValueFive = ageRowTwoValueThree.find_next("div").find_next("span")
-strippedAgeRowTwoValueFive = ageRowTwoValueFive.text
+strippedAgeRowTwoValueFive = ''.join([i if ord(i) < 128 else '' for i in ageRowTwoValueFive.text])
 
 ageRowTwoValueSix = ageRowTwoValueFive.find_next("div")
 strippedAgeRowTwoValueSix = ageRowTwoValueSix.text
 
 ageRowTwoValueSeven = ageRowTwoValueFive.find_next("div").find_next("span")
-strippedAgeRowTwoValueSeven = ageRowTwoValueSeven.text
+strippedAgeRowTwoValueSeven = ''.join([i if ord(i) < 128 else '' for i in ageRowTwoValueSeven.text])
 
 #Age Valued Row Two
 ageRowThreeValueOne = parseClinicPage.find("td", class_="de-baselineLabelCell", string="Between 18 and 65 years")
@@ -127,19 +127,19 @@ ageRowThreeValueTwo = ageRowThreeValueOne.find_next("div")
 strippedAgeRowThreeValueTwo = ageRowThreeValueTwo.text
 
 ageRowThreeValueThree = ageRowThreeValueOne.find_next("div").find_next("span")
-strippedAgeRowThreeValueThree = ageRowThreeValueThree.text
+strippedAgeRowThreeValueThree = ''.join([i if ord(i) < 128 else '' for i in ageRowThreeValueThree.text])
 
 ageRowThreeValueFour = ageRowThreeValueThree.find_next("div")
 strippedAgeRowThreeValueFour = ageRowThreeValueFour.text
 
 ageRowThreeValueFive = ageRowThreeValueThree.find_next("div").find_next("span")
-strippedAgeRowThreeValueFive = ageRowThreeValueFive.text
+strippedAgeRowThreeValueFive = ''.join([i if ord(i) < 128 else '' for i in ageRowThreeValueFive.text])
 
 ageRowThreeValueSix = ageRowThreeValueFive.find_next("div")
 strippedAgeRowThreeValueSix = ageRowThreeValueSix.text
 
 ageRowThreeValueSeven = ageRowThreeValueFive.find_next("div").find_next("span")
-strippedAgeRowThreeValueSeven = ageRowThreeValueSeven.text
+strippedAgeRowThreeValueSeven = ''.join([i if ord(i) < 128 else '' for i in ageRowThreeValueSeven.text])
 
 #Age Valued Row Three
 ageRowFourValueOne = parseClinicPage.find("td", class_="de-baselineLabelCell", string=">=65 years")
@@ -149,19 +149,19 @@ ageRowFourValueTwo = ageRowFourValueOne.find_next("div")
 strippedAgeRowFourValueTwo = ageRowFourValueTwo.text
 
 ageRowFourValueThree = ageRowFourValueOne.find_next("div").find_next("span")
-strippedAgeRowFourValueThree = ageRowFourValueThree.text
+strippedAgeRowFourValueThree = ''.join([i if ord(i) < 128 else '' for i in ageRowFourValueThree.text])
 
 ageRowFourValueFour = ageRowFourValueThree.find_next("div")
 strippedAgeRowFourValueFour = ageRowFourValueFour.text
 
 ageRowFourValueFive = ageRowFourValueThree.find_next("div").find_next("span")
-strippedAgeRowFourValueFive = ageRowFourValueFive.text
+strippedAgeRowFourValueFive = ''.join([i if ord(i) < 128 else '' for i in ageRowFourValueFive.text])
 
 ageRowFourValueSix = ageRowFourValueFive.find_next("div")
 strippedAgeRowFourValueSix = ageRowFourValueSix.text
 
 ageRowFourValueSeven = ageRowFourValueFive.find_next("div").find_next("span")
-strippedAgeRowFourValueSeven = ageRowFourValueSeven.text
+strippedAgeRowFourValueSeven = ''.join([i if ord(i) < 128 else '' for i in ageRowFourValueSeven.text])
 
 
 #Sex Category
@@ -209,19 +209,19 @@ sexRowTwoValueTwo = sexRowTwoValueOne.find_next("div")
 strippedSexRowTwoValueTwo = sexRowTwoValueTwo.text
 
 sexRowTwoValueThree = sexRowTwoValueOne.find_next("div").find_next("span")
-strippedSexRowTwoValueThree = sexRowTwoValueThree.text
+strippedSexRowTwoValueThree = ''.join([i if ord(i) < 128 else '' for i in sexRowTwoValueThree.text])
 
 sexRowTwoValueFour = sexRowTwoValueThree.find_next("div")
 strippedSexRowTwoValueFour = sexRowTwoValueFour.text
 
 sexRowTwoValueFive = sexRowTwoValueThree.find_next("div").find_next("span")
-strippedSexRowTwoValueFive = sexRowTwoValueFive.text
+strippedSexRowTwoValueFive = ''.join([i if ord(i) < 128 else '' for i in sexRowTwoValueFive.text])
 
 sexRowTwoValueSix = sexRowTwoValueFive.find_next("div")
 strippedSexRowTwoValueSix = sexRowTwoValueSix.text
 
 sexRowTwoValueSeven = sexRowTwoValueFive.find_next("div").find_next("span")
-strippedSexRowTwoValueSeven = sexRowTwoValueSeven.text
+strippedSexRowTwoValueSeven = ''.join([i if ord(i) < 128 else '' for i in sexRowTwoValueSeven.text])
 
 #Valued Sex Row Two
 sexRowThreeValueOne = parseClinicPage.find("td", class_="de-baselineLabelCell", string="Male")
@@ -231,19 +231,19 @@ sexRowThreeValueTwo = sexRowThreeValueOne.find_next("div")
 strippedSexRowThreeValueTwo = sexRowThreeValueTwo.text
 
 sexRowThreeValueThree = sexRowThreeValueOne.find_next("div").find_next("span")
-strippedSexRowThreeValueThree = sexRowThreeValueThree.text
+strippedSexRowThreeValueThree = ''.join([i if ord(i) < 128 else '' for i in sexRowThreeValueThree.text])
 
 sexRowThreeValueFour = sexRowThreeValueThree.find_next("div")
 strippedSexRowThreeValueFour = sexRowThreeValueFour.text
 
 sexRowThreeValueFive = sexRowThreeValueThree.find_next("div").find_next("span")
-strippedSexRowThreeValueFive = sexRowThreeValueFive.text
+strippedSexRowThreeValueFive = ''.join([i if ord(i) < 128 else '' for i in sexRowThreeValueFive.text])
 
 sexRowThreeValueSix = sexRowThreeValueFive.find_next("div")
 strippedSexRowThreeValueSix = sexRowThreeValueSix.text
 
 sexRowThreeValueSeven = sexRowThreeValueFive.find_next("div").find_next("span")
-strippedSexRowThreeValueSeven = sexRowThreeValueSeven.text
+strippedSexRowThreeValueSeven = ''.join([i if ord(i) < 128 else '' for i in sexRowThreeValueSeven.text])
 
 #Race Category
 raceCategory = sexRowThreeValueSeven.find_next()
@@ -305,61 +305,12 @@ strippedRaceColFour = raceColFour.text
 
 #Convert scraped data to csv file
 tableCSV = {
-    "Baseline Characteristics" : ["","","","","","","","","","","","","","","","","",],
-
-    "Arm/Group Title" : [strippedStandardSurgery,strippedStandardSurgeryWithOOC,strippedTotal,
-                     strippedOverallParticipants,strippedAnalysisDesc,"","","","","","","","","","","","",],
-
-    "Arm/Group Description" : [strippedStandardSurgeryContent,strippedStandardSurgeryWithOOContent,
-                           strippedTotalContent, strippedOverallValueOne,strippedAnalysisDescValue,"","","",""
-                               ,"","","","","","","","",],
-
-    " " :["","","",strippedOverallValueTwo,"","","","","","","","","","","","","",],
-
-    "  " :["","","",strippedOverallValueThree,"","","","","","","","","","","","","",],
-
-    #Age Category
-    "Age Categorical" : ["","","","","",strippedAgeRowOneValueOne,"","",strippedAgeRowTwoValueOne,"","",
-                         strippedAgeRowThreeValueOne,"","",strippedAgeRowFourValueOne,"","",],
-
-    "(A) Measure Type: COP" : ["","","","","",strippedAgeRowOneValueTwo,strippedAgeRowOneValueThree,strippedAgeRowOneValueFour,
-                              strippedAgeRowTwoValueTwo,strippedAgeRowTwoValueFour,strippedAgeRowTwoValueSix,
-                              strippedAgeRowThreeValueTwo,strippedAgeRowThreeValueFour,strippedAgeRowThreeValueSix,
-                              strippedAgeRowFourValueTwo,strippedAgeRowFourValueFour,strippedAgeRowFourValueSix,],
-
-    "(A) Unit of Measure : Participants" : ["","","","","","","","",
-                                           strippedAgeRowTwoValueThree,strippedAgeRowTwoValueFive,strippedAgeRowTwoValueSeven,
-                                           strippedAgeRowThreeValueThree,strippedAgeRowThreeValueFive,strippedAgeRowThreeValueSeven,
-                                           strippedAgeRowFourValueThree,strippedAgeRowFourValueFive,strippedAgeRowFourValueSeven,],
-
-
-
-    #Sex Category
-    "Sex Categorical" : ["","","","","",strippedsexRowOneValueOne,"","",strippedSexRowTwoValueOne,"","",
-                         strippedSexRowThreeValueOne,"","","","","",],
-
-    "(S) Measure Type: COP" : ["","","","","",strippedSexRowOneValueTwo,strippedSexRowOneValueThree,strippedSexRowOneValueFour,
-                              strippedSexRowTwoValueTwo,strippedSexRowTwoValueFour,strippedSexRowTwoValueSix,
-                              strippedSexRowThreeValueTwo,strippedSexRowThreeValueFour,strippedSexRowThreeValueSix,
-                              "","","",],
-
-    "(S) Unit of Measure : Participants" : ["","","","","","","","",
-                                           strippedSexRowTwoValueThree,strippedSexRowTwoValueFive,strippedSexRowTwoValueSeven,
-                                           strippedSexRowThreeValueThree,strippedSexRowThreeValueFive,strippedSexRowThreeValueSeven,
-                                           "","","",],
-
-    #Race Category
-    "Race Categorical" : ["","","","","",strippedRaceRowOneValueOne,"","",strippedRaceRowTwoValueOne,"","","","","","","","",],
-
-    "(R) Measure Type: COP" : ["","","","","",strippedRaceRowOneValueTwo,strippedRaceRowOneValueThree,strippedRaceRowOneValueFour,
-                              strippedRaceRowTwoValueTwo,strippedRaceRowTwoValueThree,strippedRaceRowTwoValueFour,strippedRaceColFour,"","","","","",],
-
-    "(R) Unit of Measure : Participants" : ["","","","","","","","","","","","","","","","","",],
+    
 
 }
 
 dataFrame = pd.DataFrame(tableCSV)
 #print("Converting data to csv file...")
-print(dataFrame)
+#print(dataFrame)
 dataFrame.to_csv("C:\\Users\\tolul\\OneDrive\\Documents\\GitHub\\scrap2.csv")
 #print("Done!")
