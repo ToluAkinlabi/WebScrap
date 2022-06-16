@@ -384,6 +384,6 @@ tableCSV = {
 
 dataFrame = pd.DataFrame(tableCSV)
 #print("Converting data to csv file...")
-print(dataFrame)
-dataFrame.to_csv("C:\\Users\\tolul\\OneDrive\\Documents\\GitHub\\scrap2.csv")
+#print(dataFrame)
+#dataFrame.to_csv("C:\\Users\\tolul\\OneDrive\\Documents\\GitHub\\scrap2.csv")
 #print("Done!")
