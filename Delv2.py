@@ -35,7 +35,7 @@ strippedStandardSurgeryContent = standardSurgeryContent.text
 standardSurgeryWithOOContent = standardSurgeryContent.find_next()
 strippedStandardSurgeryWithOOContent = standardSurgeryWithOOContent.text
 
-totalContent = standardSurgeryWithOOContent.find_next()
+totalContent = parseClinicPage.find("tr", class_="EXPAND", id="EXPAND-armGroupDescriptionRow-baseline").find("p").find_next().find_next()
 strippedTotalContent = totalContent.text
 
 #Overall Participant
@@ -306,10 +306,32 @@ strippedRaceColFour = raceColFour.text
 #Convert scraped data to csv file
 tableCSV = {
 
+    # Standard Surgery Section
+    "Standard Surgery" : [""],
+    "Arm/Group Description" : [],
+    "Overall Number of Baseline Participants" : [],
+    "Baseline Analysis Population Description" : [],
+    "Age, Categorical Measure Type: Count of Participants Unit of measure:  Participants " : [],
+    "Number Analyzed" : [],
+    "<=18 years" : [],
+    " " : [],
+    "Between 18 and 65 years" : [],
+    "  " : [],
+    ">=65 years" : [],
+    "   " : [],
+    "Sex, Categorical Measure Type: Count of Participants Unit of measure:  Participants " : [],
+    "(S) Number Analyzed" : [],
+    "Female" : [],
+    "    " :[],
+    "Male" : [],
+    "     " : [],
+    "Race and Ethnicity Not Collected Measure Type: Count of Participants Unit of measure:  Participants" : [],
+    "(R) Number Analyzed" : [],
+    "Empty" : [],
 }
 
 dataFrame = pd.DataFrame(tableCSV)
 #print("Converting data to csv file...")
-#print(dataFrame)
+print(dataFrame)
 dataFrame.to_csv("C:\\Users\\tolul\\OneDrive\\Documents\\GitHub\\scrap2.csv")
 #print("Done!")
