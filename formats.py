@@ -6,7 +6,7 @@ import numpy as np
 def findFormat():
 
     #Looping through the pages
-    pages = np.arange(1,20,1)
+    pages = np.arange(1,10,1)
     for page in pages:
         clinicPage = requests.get("https://clinicaltrials.gov/ct2/show/study/NCT05167370?rslt=With&cntry=US&draw=2&rank=1")
         parseClinicPage = BeautifulSoup(clinicPage.content, "html.parser")
@@ -27,23 +27,10 @@ def findFormat():
         getColumnFormat = str(len(colns))
 
         #rows
-        rows = pageSoup.find("div",id="tab-body").find("div", class_="tr-indent2").find_all("div", class_="tr-indent1 tr-squishScroll")[1].find("table", class_="de-lightBorder").find("tbody").find_all()
+        rows = pageSoup.find("div",id="tab-body").find("div", class_="tr-indent2").find_all("div", class_="tr-indent1 tr-squishScroll")[1].find("table", class_="de-lightBorder").find("tbody")
         getRowFormat = str(len(rows))
 
         print("The format for page " + str(page) + " is" + " " + getRowFormat + " rows by " + getColumnFormat + " columns")
 
 
-#findFormat()
-
-clinicPage = requests.get("https://clinicaltrials.gov/ct2/show/results/NCT05167370?rslt=With&cntry=US&draw=2&rank=1")
-parseClinicPage = BeautifulSoup(clinicPage.content, "html.parser")
-
-colns = parseClinicPage.find("div",id="tab-body").find("div", class_="tr-indent2").find_all("div", class_="tr-indent1 tr-squishScroll")[1].find("table", class_="de-lightBorder").find("tbody").find("tr").find_all()
-print(colns)
-getColumnFormat = str(len(colns))
-
-rows = parseClinicPage.find("div",id="tab-body").find("div", class_="tr-indent2").find_all("div", class_="tr-indent1 tr-squishScroll")[1].find("table", class_="de-lightBorder").find("tbody").find_all()
-print(rows)
-getRowFormat = str(len(rows))
-
-print("The format is" + " " + getRowFormat + " rows by " + getColumnFormat + " columns")
+findFormat()
