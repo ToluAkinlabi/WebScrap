@@ -7,7 +7,7 @@ def findFormat():
     format_set = set()
     column_set = set()
     #Looping through the pages
-    pages = np.arange(1,10,1)
+    pages = np.arange(1,6,1)
     for page in pages:
         clinicPage = requests.get("https://clinicaltrials.gov/ct2/show/study/NCT05167370?rslt=With&cntry=US&draw=2&rank=1")
         parseClinicPage = BeautifulSoup(clinicPage.content, "html.parser")
@@ -40,10 +40,8 @@ def findFormat():
         column_set.add(getColumnFormat)
 
     #gets the numbers of formats
-    print(len(format_set))
-    print(format_set)
-    print(column_set)
-
-
+    print(f'Length of format: {len(format_set)}')
+    print(f'Format types : {format_set}')
+    print(f'Columns : {column_set}')
 
 findFormat()
