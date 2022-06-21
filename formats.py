@@ -4,7 +4,8 @@ from bs4 import BeautifulSoup
 import numpy as np
 
 def findFormat():
-
+    format_set = set()
+    column_set = set()
     #Looping through the pages
     pages = np.arange(1,10,1)
     for page in pages:
@@ -20,17 +21,29 @@ def findFormat():
         slicedResultPage = resultPage[17:]
         storeNextPage = "https://clinicaltrials.gov/ct2/show/study/" + slicedResultPage  #this gives the full link to the next result page
         storeNextResultPage = "https://clinicaltrials.gov" + resultPage  # this gives the full link to the next result page
+        #print(storeNextPage)
+        #print(storeNextResultPage)
 
         #get length of row and columns
         #columns
-        colns = pageSoup.find("div",id="tab-body").find("div", class_="tr-indent2").find_all("div", class_="tr-indent1 tr-squishScroll")[1].find("table", class_="de-lightBorder").find("tbody").find("tr").find_all()
-        getColumnFormat = str(len(colns))
+        colns = pageSoup.find("div",id="tab-body").find("div", class_="tr-indent2").find_all("div", class_="tr-indent1 tr-squishScroll")[1].find("table", class_="de-lightBorder").find("tbody").find("tr").find().find_next_siblings()
+        getColumnFormat = str(len(colns) + 1)
 
         #rows
-        rows = pageSoup.find("div",id="tab-body").find("div", class_="tr-indent2").find_all("div", class_="tr-indent1 tr-squishScroll")[1].find("table", class_="de-lightBorder").find("tbody")
-        getRowFormat = str(len(rows))
+        rows = pageSoup.find("div",id="tab-body").find("div", class_="tr-indent2").find_all("div", class_="tr-indent1 tr-squishScroll")[1].find("table", class_="de-lightBorder").find("tbody").find("tr").find_next_siblings()
+        getRowFormat = str(len(rows) + 1)
 
-        print("The format for page " + str(page) + " is" + " " + getRowFormat + " rows by " + getColumnFormat + " columns")
+        #print("The format for page " + str(page) + " is" + " " + getRowFormat + " rows by " + getColumnFormat + " columns")
+
+        #stores column format and row format
+        format_set.add(getRowFormat + "," + getColumnFormat)
+        column_set.add(getColumnFormat)
+
+    #gets the numbers of formats
+    print(len(format_set))
+    print(format_set)
+    print(column_set)
+
 
 
 findFormat()
