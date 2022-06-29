@@ -18,6 +18,7 @@ def findFormat():
                 parseClinicPage = BeautifulSoup(clinicPage.content, "html.parser")
 
                 pageGetter = requests.get("https://clinicaltrials.gov/ct2/show/results?rslt=With&cntry=US&draw=2&rank=" + str(page))
+
                 pageSoup = BeautifulSoup(pageGetter.content, 'html.parser')
                 nextPage = pageSoup.find("div", class_="tr-results-nav").find(class_="tr-next-link", href=True)
                 resultPage = str(nextPage['href'])
@@ -45,13 +46,14 @@ def findFormat():
                 column_set.add(getColumnFormat)
 
                 #gets the numbers of formats
-                print(f'Length of format: {len(format_set)}')
-                print(f'Format types : {format_set}')
-                print(f'Columns : {column_set}')
+               # print(f'Length of format: {len(format_set)}')
+               # print(f'Format types : {format_set}')
+               # print(f'Columns : {column_set}')
                 break
             except :
                 print("Error found!", sys.exc_info())
                 print(pageGetter)
+                print(page)
 
 
 findFormat()
