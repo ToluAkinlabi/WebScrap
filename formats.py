@@ -10,7 +10,7 @@ def findFormat():
     column_set = set()
     failedUrl = []
     #Looping through the pages
-    pages = np.arange(1,38029,1)
+    pages = np.arange(1,38140,1)
     for page in pages:
         while True:
             try:
@@ -44,16 +44,16 @@ def findFormat():
                 #stores column format and row format
                 format_set.add(getRowFormat + "," + getColumnFormat)
                 column_set.add(getColumnFormat)
-
-                #gets the numbers of formats
-               # print(f'Length of format: {len(format_set)}')
-               # print(f'Format types : {format_set}')
-               # print(f'Columns : {column_set}')
                 break
             except :
                 print("Error found!", sys.exc_info())
                 print(pageGetter)
                 print(page)
 
+    # gets the numbers of formats
+    print(f'Length of format: {len(format_set)}')
+    print(f'Format types : {format_set}')
+    print(f'Columns : {column_set}')
 
 findFormat()
+
