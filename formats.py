@@ -18,25 +18,26 @@ def findFormat():
         while not lastPage:
             try:
 
-                #
+                #Request to fetch the whole page
                 #clinicPage = requests.get("https://clinicaltrials.gov/ct2/show/study/NCT05167370?rslt=With&cntry=US&draw=2&rank=1")
                 #parseClinicPage = BeautifulSoup(clinicPage.content, "html.parser")
 
+                #Request to fetch the result page
                 pageGetter = requests.get("https://clinicaltrials.gov/ct2/show/results?rslt=With&cntry=US&draw=2&rank=" + str(page))
-
                 pageSoup = BeautifulSoup(pageGetter.content, 'html.parser')
 
                 #Test for last page if it exists
                 try:
                     nextPage = pageSoup.find("div", class_="tr-results-nav").find(class_="tr-next-link", href=True)
-                    resultPage = str(nextPage['href'])
+                    resultPage = str(nextPage['href']) # catches and stores the href to the next page
 
-                    # slice the result page to allow edit to link to display result page
+                    # slices the result page to allow edit to link to display result page
                     slicedResultPage = resultPage[17:]
-                    storeNextPage = "https://clinicaltrials.gov/ct2/show/study/" + slicedResultPage  # this gives the full link to the next result page
+                    storeNextPage = "https://clinicaltrials.gov/ct2/show/study/" + slicedResultPage  # this gives the full link to the next study page
                     storeNextResultPage = "https://clinicaltrials.gov" + resultPage  # this gives the full link to the next result page
                     # print(storeNextPage)
                     # print(storeNextResultPage)
+
                 except:
                     try:
                         lastPage = pageSoup.find("div", class_="tr-results-nav").find("span", class_="grayed_fore_color", string="Next Study")
@@ -57,7 +58,6 @@ def findFormat():
                 #stores column format and row format
                 format_set.add(getRowFormat + "," + getColumnFormat)
                 column_set.add(getColumnFormat)
-
                 break
             except :
                 print("Error found!", sys.exc_info())
