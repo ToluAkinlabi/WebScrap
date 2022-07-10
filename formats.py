@@ -1,23 +1,23 @@
 import sys
 import traceback
-
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup
+from pandas import DataFrame
 import numpy as np
 
 def findFormat():
     format_set = set()
     column_set = set()
+    row_set = set()
     lastPage = None
     failedUrl = []
 
     #Looping through the pages
-    pages = np.arange(38169,38172,1)
+    pages = np.arange(1,6,1)
     for page in pages:
         while not lastPage:
             try:
-
                 #Request to fetch the whole page
                 #clinicPage = requests.get("https://clinicaltrials.gov/ct2/show/study/NCT05167370?rslt=With&cntry=US&draw=2&rank=1")
                 #parseClinicPage = BeautifulSoup(clinicPage.content, "html.parser")
@@ -58,7 +58,14 @@ def findFormat():
                 #stores column format and row format
                 format_set.add(getRowFormat + "," + getColumnFormat)
                 column_set.add(getColumnFormat)
+                row_set.add(getRowFormat)
+
+                data = {'Page': [page], 'Rows': [getRowFormat], 'Columns': [getColumnFormat]}
+                df = DataFrame(data, columns=['Page', 'Rows', 'Columns'])
+                df.to_json(r'C:\Users\tolul\OneDrive\Documents\GitHub\WebScrap\jsonresult.json')
+
                 break
+
             except :
                 print("Error found!", sys.exc_info())
                 print(pageGetter)
@@ -72,6 +79,8 @@ def findFormat():
     print(f'Length of format: {len(format_set)}')
     print(f'Format types : {format_set}')
     print(f'Columns : {column_set}')
+    print(f'Rows : {row_set}')
+
 
 findFormat()
 
