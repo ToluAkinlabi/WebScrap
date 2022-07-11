@@ -63,7 +63,7 @@ def findFormat():
 
                 data = {'Page': [page], 'Rows': [getRowFormat], 'Columns': [getColumnFormat]}
                 df = df.append(DataFrame(data, columns=['Page', 'Rows', 'Columns']))
-                df.to_json(r'C:\Users\tolul\OneDrive\Documents\GitHub\WebScrap\jsonresult.json', orient='table')
+                df.to_json(r'C:\Users\tolul\OneDrive\Documents\GitHub\WebScrap\jsonresult.json', orient='records')
 
                 break
 
