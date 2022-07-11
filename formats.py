@@ -7,6 +7,7 @@ from pandas import DataFrame
 import numpy as np
 
 def findFormat():
+    df = pd.DataFrame()
     format_set = set()
     column_set = set()
     row_set = set()
@@ -61,8 +62,8 @@ def findFormat():
                 row_set.add(getRowFormat)
 
                 data = {'Page': [page], 'Rows': [getRowFormat], 'Columns': [getColumnFormat]}
-                df = DataFrame(data, columns=['Page', 'Rows', 'Columns'])
-                df.to_json(r'C:\Users\tolul\OneDrive\Documents\GitHub\WebScrap\jsonresult.json')
+                df = df.append(DataFrame(data, columns=['Page', 'Rows', 'Columns']))
+                df.to_json(r'C:\Users\tolul\OneDrive\Documents\GitHub\WebScrap\jsonresult.json', orient='table')
 
                 break
 
@@ -79,7 +80,7 @@ def findFormat():
     print(f'Length of format: {len(format_set)}')
     print(f'Format types : {format_set}')
     print(f'Columns : {column_set}')
-    print(f'Rows : {row_set}')
+   # print(f'Rows : {row_set}')
 
 
 findFormat()
