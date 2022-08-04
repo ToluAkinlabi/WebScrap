@@ -8,6 +8,8 @@ import numpy as np
 
 df = pd.DataFrame()
 firstRowContent = []
+secondRowContent = []
+
 
 # downloads html page and parse page for readability.
 clinicPage = requests.get("https://clinicaltrials.gov/ct2/show/results/NCT05143801?rslt=With&cntry=US&draw=2&rank=2")
@@ -24,6 +26,10 @@ for child in eachRow.stripped_strings:
     firstRowContent.append(child)
 print(firstRowContent)
 
+secondRow = eachRow.find_next_sibling(id="EXPAND-armGroupDescriptionRow-baseline")
+for child in secondRow.stripped_strings:
+    secondRowContent.append(child)
+print(secondRowContent)
 
 
 
