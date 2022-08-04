@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 from pandas import DataFrame
 import numpy as np
 
-def findFormat():
+def sortParse():
     df = pd.DataFrame()
     format_set = set()
     column_set = set()
@@ -24,7 +24,7 @@ def findFormat():
                 #parseClinicPage = BeautifulSoup(clinicPage.content, "html.parser")
 
                 #Request to fetch the result page
-                pageGetter = requests.get("https://clinicaltrials.gov/ct2/show/results/NCT05143801?rslt=With&cntry=US&draw=2&rank=" + str(page))
+                pageGetter = requests.get("https://clinicaltrials.gov/ct2/show/results?rslt=With&cntry=US&draw=2&rank=" + str(page))
                 pageSoup = BeautifulSoup(pageGetter.content, 'html.parser')
 
                 #Test for last page if it exists
@@ -45,26 +45,7 @@ def findFormat():
                     except:
                         continue
 
-                #get length of row and columns
-                #columns
-                colns = pageSoup.find("div",id="tab-body").find("div", class_="tr-indent2").find_all("div", class_="tr-indent1 tr-squishScroll")[1].find("table", class_="de-lightBorder").find("tbody").find("tr").find().find_next_siblings()
-                getColumnFormat = str(len(colns) + 1)
 
-                #rows
-                rows = pageSoup.find("div",id="tab-body").find("div", class_="tr-indent2").find_all("div", class_="tr-indent1 tr-squishScroll")[1].find("table", class_="de-lightBorder").find("tbody").find("tr").find_next_siblings()
-                getRowFormat = str(len(rows) + 1)
-
-                print("The format for page " + str(page) + " is" + " " + getRowFormat + " rows by " + getColumnFormat + " columns")
-
-                #stores column format and row format
-                format_set.add(getRowFormat + "," + getColumnFormat)
-                column_set.add(getColumnFormat)
-                row_set.add(getRowFormat)
-
-                #Store Result into a json file
-                data = {'Page': [page], 'Rows': [getRowFormat], 'Columns': [getColumnFormat]}
-                df = df.append(DataFrame(data, columns=['Page', 'Rows', 'Columns']))
-                df.to_json(r'C:\Users\tolul\OneDrive\Documents\GitHub\WebScrap\jsonresult.json', orient='orient')
 
                 break
 
@@ -77,12 +58,5 @@ def findFormat():
         if lastPage:
             break
 
-    # gets the numbers of formats
-    print(f'Length of format: {len(format_set)}')
-    print(f'Format types : {format_set}')
-    print(f'Columns : {column_set}')
-   # print(f'Rows : {row_set}')
-
-
-findFormat()
+sortParse()
 

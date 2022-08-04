@@ -1,1 +1,1 @@
-[{"Page":6,"Rows":"41","Columns":"2"},{"Page":7,"Rows":"19","Columns":"4"}]
+{"schema":{"fields":[{"name":"index","type":"integer"},{"name":"Page","type":"integer"},{"name":"Rows","type":"string"},{"name":"Columns","type":"string"}],"pandas_version":"1.4.0"},"data":[{"index":0,"Page":1,"Rows":"27","Columns":"2"},{"index":0,"Page":2,"Rows":"37","Columns":"2"},{"index":0,"Page":3,"Rows":"43","Columns":"4"},{"index":0,"Page":4,"Rows":"29","Columns":"2"},{"index":0,"Page":5,"Rows":"21","Columns":"2"}]}
