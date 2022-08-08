@@ -16,13 +16,13 @@ def main():
     finalArray = []
 
     #Looping through the pages
-    pages = np.arange(1,6,1)
+    pages = np.arange(1,4,1)
     for page in pages:
         while not lastPage:
             try:
 
                 # downloads html page and parse page for readability.
-                clinicPage = requests.get("https://clinicaltrials.gov/ct2/show/results/NCT05143801?rslt=With&cntry=US&draw=2&rank=" + str(page))
+                clinicPage = requests.get("https://clinicaltrials.gov/ct2/show/results?rslt=With&cntry=US&draw=2&rank=" + str(page))
                 parseClinicPage = BeautifulSoup(clinicPage.content, "html.parser")
 
                 #Test for last page if it exists
@@ -56,8 +56,8 @@ def main():
                     finalArray.append(item.replace('\u2007', ''))
 
                 print(finalArray)
-
                 break
+
 
             except :
                 print("Error found!", sys.exc_info())

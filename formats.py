@@ -24,7 +24,7 @@ def findFormat():
                 #parseClinicPage = BeautifulSoup(clinicPage.content, "html.parser")
 
                 #Request to fetch the result page
-                pageGetter = requests.get("https://clinicaltrials.gov/ct2/show/results/NCT05143801?rslt=With&cntry=US&draw=2&rank=" + str(page))
+                pageGetter = requests.get("https://clinicaltrials.gov/ct2/show/results?rslt=With&cntry=US&draw=2&rank=" + str(page))
                 pageSoup = BeautifulSoup(pageGetter.content, 'html.parser')
 
                 #Test for last page if it exists
@@ -61,10 +61,6 @@ def findFormat():
                 column_set.add(getColumnFormat)
                 row_set.add(getRowFormat)
 
-                #Store Result into a json file
-                data = {'Page': [page], 'Rows': [getRowFormat], 'Columns': [getColumnFormat]}
-                df = df.append(DataFrame(data, columns=['Page', 'Rows', 'Columns']))
-                df.to_json(r'C:\Users\tolul\OneDrive\Documents\GitHub\WebScrap\jsonresult.json', orient='orient')
 
                 break
 
