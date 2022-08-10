@@ -10,13 +10,9 @@ def main():
     df = pd.DataFrame()
     lastPage = None
     rawArray = []
-    secondRawArray = []
-    thirdRawArray = []
-    fourthRawArray = []
-    finalArray = []
 
     #Looping through the pages
-    pages = np.arange(1,4,1)
+    pages = np.arange(1,2,1)
     for page in pages:
         while not lastPage:
             try:
@@ -41,21 +37,15 @@ def main():
 
                 # parse row one after the other to get contents
                 rows = parseClinicPage.find("div", id="tab-body").find("div", class_="tr-indent2").find_all("div",class_="tr-indent1 tr-squishScroll")[1].find("table", class_="de-lightBorder").find("tbody").find_all("tr")
+
                 for eachRow in rows:
+                    row_data = []
                     for child in eachRow.find_all(['td', 'th']):
-                        rawArray.append(child.text.strip())
+                        row_data.append(child.text.strip().replace(u'\xa0', u'').replace('\n', '').replace('\r', '').replace('\u2007', ''))
+                    rawArray.append(row_data)
 
-                # remove \xa0, \u2007, \n, \r from code
-                for item in rawArray:
-                    secondRawArray.append(item.replace(u'\xa0', u''))
-                for item in secondRawArray:
-                    thirdRawArray.append(item.replace('\n', ''))
-                for item in thirdRawArray:
-                    fourthRawArray.append(item.replace('\r', ''))
-                for item in fourthRawArray:
-                    finalArray.append(item.replace('\u2007', ''))
-
-                print(finalArray)
+                for eachRow in rawArray:
+                    print(eachRow)
                 break
 
 
