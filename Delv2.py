@@ -1,4 +1,5 @@
 import sys
+import re
 import traceback
 import pandas as pd
 import requests
@@ -41,13 +42,35 @@ def main():
                 for eachRow in rows:
                     row_data = []
                     for child in eachRow.find_all(['td', 'th']):
-                        row_data.append(child.text.strip().replace(u'\xa0', u'').replace('\n', '').replace('\r', '').replace('\u2007', ''))
-                    rawArray.append(row_data)
+                        row_data.append(child.text.strip().replace(u'\xa0', u' ').replace('\n', ' ').replace('\r', ' ').replace('\u2007', ' '))
 
+                    #convert result to dictionary
+                    if re.match("^(Arm|Baseline|Overall)", row_data[0]):
+                        row_dict = {row_data[0]: row_data[1:]}
+                        rawArray.append(row_dict)
+
+                    elif re.match("^(Age)", row_data[0]):
+                        row_dict = {row_data[0]: row_data[2:]}
+                        rawArray.append(row_dict)
+
+
+              #      elif (row_data[0:2] == 'Sex'):
+               #         row_dict = {row_data[0]: child[9:]}
+                #        rawArray.append(row_dict)
+                 #   elif (row_data[0:3] == 'Race'):
+                  #      row_dict = {row_data[0]: child[13:]}
+                   #     rawArray.append(row_dict)
+                    #elif (row_data[0:5] == 'Region'):
+                     #   row_dict = {row_data[0]: child[17:]}
+                      #  rawArray.append(row_dict)
+                   # else:
+                    #    row_dict = {row_data[0]: row_data[1:]}
+                     #   rawArray.append(row_dict) **/
+
+                #Print result of appended data from dictionary
                 for eachRow in rawArray:
                     print(eachRow)
                 break
-
 
             except :
                 print("Error found!", sys.exc_info())
