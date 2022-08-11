@@ -11,7 +11,7 @@ def main():
     df = pd.DataFrame()
     lastPage = None
     rawArray = []
-
+    extraArray = []
     #Looping through the pages
     pages = np.arange(1,2,1)
     for page in pages:
@@ -22,7 +22,7 @@ def main():
                 clinicPage = requests.get("https://clinicaltrials.gov/ct2/show/results?rslt=With&cntry=US&draw=2&rank=" + str(page))
                 parseClinicPage = BeautifulSoup(clinicPage.content, "html.parser")
 
-                #Test for last page if it exists
+                # Test for last page if it exists
                 try:
                     nextPage = parseClinicPage.find("div", class_="tr-results-nav").find(class_="tr-next-link", href=True)
                     resultPage = str(nextPage['href']) # catches and stores the href to the next page
@@ -39,33 +39,40 @@ def main():
                 # parse row one after the other to get contents
                 rows = parseClinicPage.find("div", id="tab-body").find("div", class_="tr-indent2").find_all("div",class_="tr-indent1 tr-squishScroll")[1].find("table", class_="de-lightBorder").find("tbody").find_all("tr")
 
+                for combined in rows:
+                    combinedRowArray = []
+                    for child in combined.find_all(['td', 'th']):
+                        combinedRowArray.append(child.text.strip().replace(u'\xa0', u' ').replace('\n', ' ').replace('\r', ' ').replace('\u2007', ' '))
+                    extraArray.append(combinedRowArray)
+
                 for eachRow in rows:
                     row_data = []
                     for child in eachRow.find_all(['td', 'th']):
                         row_data.append(child.text.strip().replace(u'\xa0', u' ').replace('\n', ' ').replace('\r', ' ').replace('\u2007', ' '))
+                    extraArray.append(combinedRowArray)
 
-                    #convert result to dictionary
+                    # convert result to dictionary
                     if re.match("^(Arm|Baseline|Overall)", row_data[0]):
                         row_dict = {row_data[0]: row_data[1:]}
                         rawArray.append(row_dict)
 
                     elif re.match("^(Age)", row_data[0]):
-                        row_dict = {row_data[0]: row_data[2:]}
+                        row_dict = {row_data[0]: extraArray[7:]}
                         rawArray.append(row_dict)
 
 
-              #      elif (row_data[0:2] == 'Sex'):
+              #      elif re.match("^(Sex)", row_data[0]):
                #         row_dict = {row_data[0]: child[9:]}
                 #        rawArray.append(row_dict)
-                 #   elif (row_data[0:3] == 'Race'):
+                 #   elif re.match("^(Race)", row_data[0]):
                   #      row_dict = {row_data[0]: child[13:]}
                    #     rawArray.append(row_dict)
-                    #elif (row_data[0:5] == 'Region'):
+                    #elif re.match("^(Region)", row_data[0]):
                      #   row_dict = {row_data[0]: child[17:]}
                       #  rawArray.append(row_dict)
                    # else:
                     #    row_dict = {row_data[0]: row_data[1:]}
-                     #   rawArray.append(row_dict) **/
+                     #   rawArray.append(row_dict)
 
                 #Print result of appended data from dictionary
                 for eachRow in rawArray:
