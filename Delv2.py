@@ -1,10 +1,10 @@
 import sys
 import re
 import traceback
+import json
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup
-from pandas import DataFrame
 import numpy as np
 
 def main():
@@ -89,4 +89,8 @@ def main():
         if lastPage:
             break
 
+    #Dumps the stored final array into json file.
+    projectfile = open("projectfile.json", "w")
+    json.dump(finalRowArray, projectfile, indent=6)
+    projectfile.close()
 main()

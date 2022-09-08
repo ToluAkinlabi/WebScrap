@@ -1,0 +1,121 @@
+[
+      {
+            "Arm/Group Title": [
+                  "Phenylephrine",
+                  "Arginine Vasopressin",
+                  "Epinephrine",
+                  "Total"
+            ]
+      },
+      {
+            "Arm/Group Description": [
+                  "Phenylephrine (1ug/kg) administered...",
+                  "Arginine Vasopressin (1ug/kg) admin...",
+                  "Epinephrine (0.5-1ug/kg) administer...",
+                  "Total of all reporting groups"
+            ]
+      },
+      {
+            "Arm/Group Description": [
+                  "Phenylephrine (1ug/kg) administered once the child is under anesthesia.",
+                  "Arginine Vasopressin (1ug/kg) administered once the child is under anesthesia.",
+                  "Epinephrine (0.5-1ug/kg) administered once the child is under anesthesia.",
+                  "Total of all reporting groups"
+            ]
+      },
+      {
+            "Overall Number of Baseline Participants": [
+                  "5",
+                  "5",
+                  "5",
+                  "15"
+            ]
+      },
+      {
+            "Baseline Analysis Population Description": [
+                  "[Not Specified]"
+            ]
+      },
+      {
+            "Baseline Analysis Population Description": [
+                  "[Not Specified]"
+            ]
+      },
+      {
+            "Age, Continuous                                     Mean (Standard Deviation)Unit of measure:  Years": [
+                  [
+                        "Number Analyzed",
+                        "5 participants",
+                        "5 participants",
+                        "5 participants",
+                        "15 participants"
+                  ],
+                  [
+                        "10.2          (3.8)",
+                        "10.5          (4.9)",
+                        "6.8          (4.2)",
+                        "9.2          (4.5)"
+                  ]
+            ]
+      },
+      {
+            "Sex: Female, Male                                     Measure Type: Count of ParticipantsUnit of measure:  Participants": [
+                  [
+                        "Number Analyzed",
+                        "5 participants",
+                        "5 participants",
+                        "5 participants",
+                        "15 participants"
+                  ],
+                  [
+                        "4  80.0%",
+                        "4  80.0%",
+                        "3  60.0%",
+                        "11  73.3%"
+                  ],
+                  [
+                        "1  20.0%",
+                        "1  20.0%",
+                        "2  40.0%",
+                        "4  26.7%"
+                  ]
+            ]
+      },
+      {
+            "Race and Ethnicity Not Collected                     [1]  Measure Type: Count of ParticipantsUnit of measure:  Participants": [
+                  [
+                        "Number Analyzed",
+                        "0 participants",
+                        "0 participants",
+                        "0 participants",
+                        "0 participants"
+                  ],
+                  [
+                        "",
+                        "",
+                        "",
+                        "0"
+                  ],
+                  [
+                        "[1] Measure Analysis Population Description: Race and Ethnicity were not collected from any participant."
+                  ]
+            ]
+      },
+      {
+            "Region of Enrollment                                     Measure Type: Count of ParticipantsUnit of measure:  Participants": [
+                  [
+                        "Number Analyzed",
+                        "5 participants",
+                        "5 participants",
+                        "5 participants",
+                        "15 participants"
+                  ],
+                  [
+                        "5 100.0%",
+                        "5 100.0%",
+                        "5 100.0%",
+                        "15 100.0%"
+                  ]
+            ]
+      }
+]
