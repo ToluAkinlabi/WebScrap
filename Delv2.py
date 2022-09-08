@@ -10,8 +10,8 @@ import numpy as np
 def main():
     df = pd.DataFrame()
     lastPage = None
-    rawArray = []
-    extraArray = []
+    finalRowArray = []
+    initialRowArray = []
 
     # Looping through the pages
     pages = np.arange(1,2,1)
@@ -45,35 +45,38 @@ def main():
                     combinedRowArray = []
                     for child in combined.find_all(['td', 'th']):
                         combinedRowArray.append(child.text.strip().replace(u'\xa0', u' ').replace('\n', ' ').replace('\r', ' ').replace('\u2007', ' '))
-                    extraArray.append(combinedRowArray)
-
-                row_dict_key = None
+                    initialRowArray.append(combinedRowArray)
 
                 # same method as above, but storing as a single array per row for easy transform into dictionary
+                rowDictKey = None
+
                 for eachRow in rows:
-                    row_data = []
+                    eachRowData = []
                     for child in eachRow.find_all(['td', 'th']):
-                        row_data.append(child.text.strip().replace(u'\xa0', u' ').replace('\n', ' ').replace('\r', ' ').replace('\u2007', ' '))
+                        eachRowData.append(child.text.strip().replace(u'\xa0', u' ').replace('\n', ' ').replace('\r', ' ').replace('\u2007', ' '))
 
                     # convert row to dictionary based on the {key : value} structure
-                    if re.match("^(Arm|Baseline|Overall)", row_data[0]):
-                        row_dict = {row_data[0]: row_data[1:]}
-                        rawArray.append(row_dict)
+                    if re.match("^(Arm|Baseline|Overall)", eachRowData[0]):
+                        rowDict = {eachRowData[0]: eachRowData[1:]}
+                        finalRowArray.append(rowDict)
 
-                    elif re.match("^(Age)", row_data[0]):
-                        row_dict_key = row_data[0]
-                        row_dict = {row_dict_key: []}
+                    #Check for keywords and print the equivalent and store in dictionary data type
+                    if re.match("^(Age|Sex|Race|Region)", eachRowData[0]):
+                        rowDictKey = eachRowData[0]
+                        rowDict = {rowDictKey: []}
+                        finalRowArray.append(rowDict)
                         continue
 
-                    elif re.match("^(Sex)", row_data[0]):
-                        rawArray.append(row_dict)
+                    elif re.match("^(Sex|Race|Region|'')", eachRowData[0]):
+                        finalRowArray.append(rowDict)
                         break
 
-                    if row_dict_key:
-                        row_dict[row_dict_key].append(row_data[1:])
+                    if rowDictKey:
+                        rowDict[rowDictKey].append(eachRowData[1:])
+
 
                 # Print result of appended data from dictionary
-                for eachRow in rawArray:
+                for eachRow in finalRowArray:
                     print(eachRow)
                 break
 
