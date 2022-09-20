@@ -14,7 +14,7 @@ def main():
     initialRowArray = []
 
     # Looping through the pages
-    pages = np.arange(1,2,1)
+    pages = np.arange(2,3,1)
     for page in pages:
         while not lastPage:
             try:
@@ -48,8 +48,8 @@ def main():
                 for row in rows:
                     # Find all data for the total column for each row
                     header = row.find('td').text.strip().replace(u'\xa0', u' ').replace('\n', ' ').replace('\r', ' ').replace('\u2007', ' ')
-                    Total = row.find_all('td')[-1].text.strip().replace(u'\xa0', u' ').replace('\n', ' ').replace('\r', ' ').replace('\u2007', ' ')
-                    totalArray.append({header : Total})
+                    total = row.find_all(['td','th'])[-1].text.strip().replace(u'\xa0', u' ').replace('\n', ' ').replace('\r', ' ').replace('\u2007', ' ')
+                    totalArray.append({header: total})
 
                 print(totalArray)
             except :
